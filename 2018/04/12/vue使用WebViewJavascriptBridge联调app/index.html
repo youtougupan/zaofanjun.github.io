@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue使用WebViewJavascriptBridge联调app | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用的是vue2.0框架，现在在做的项目是 hybrid 开发，H5 页面会嵌入到 IOS或者Android 客户端 app 中，于是就涉及到了 H5 与 APP 交互的问题。在这里记录一下项目中用到的交互方式，重点介绍 WebViewJavascriptBridge。 使用 WebViewJavascriptBridge当 H5 页面与 IOS 端交互比较复杂时，比如页面需要获取 IOS/And">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue使用WebViewJavascriptBridge联调app">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/vue使用WebViewJavascriptBridge联调app/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用的是vue2.0框架，现在在做的项目是 hybrid 开发，H5 页面会嵌入到 IOS或者Android 客户端 app 中，于是就涉及到了 H5 与 APP 交互的问题。在这里记录一下项目中用到的交互方式，重点介绍 WebViewJavascriptBridge。 使用 WebViewJavascriptBridge当 H5 页面与 IOS 端交互比较复杂时，比如页面需要获取 IOS/And">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-18T02:22:07.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue使用WebViewJavascriptBridge联调app">
+<meta name="twitter:description" content="使用的是vue2.0框架，现在在做的项目是 hybrid 开发，H5 页面会嵌入到 IOS或者Android 客户端 app 中，于是就涉及到了 H5 与 APP 交互的问题。在这里记录一下项目中用到的交互方式，重点介绍 WebViewJavascriptBridge。 使用 WebViewJavascriptBridge当 H5 页面与 IOS 端交互比较复杂时，比如页面需要获取 IOS/And">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue使用WebViewJavascriptBridge联调app" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/12/vue使用WebViewJavascriptBridge联调app/" class="article-date">
+  <time datetime="2018-04-12T01:56:56.000Z" itemprop="datePublished">2018-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue使用WebViewJavascriptBridge联调app
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用的是vue2.0框架，现在在做的项目是 hybrid 开发，H5 页面会嵌入到 IOS或者Android 客户端 app 中，于是就涉及到了 H5 与 APP 交互的问题。在这里记录一下项目中用到的交互方式，重点介绍 <strong>WebViewJavascriptBridge</strong>。</p>
+<h3 id="使用-WebViewJavascriptBridge"><a href="#使用-WebViewJavascriptBridge" class="headerlink" title="使用 WebViewJavascriptBridge"></a><a href="#使用-WebViewJavascriptBridge" title="使用 WebViewJavascriptBridge"></a>使用 WebViewJavascriptBridge</h3><p>当 H5 页面与 IOS 端交互比较复杂时，比如页面需要获取 IOS/Android 端传回的返回值，或者 IOS/Android 端需要调用 js 方法。</p>
+<p>可以通过第三方库来实现，我们项目用的是 <strong>WebViewJavascriptBridge</strong>。下面介绍我怎么在 vue 项目中使用 <strong>WebViewJavascriptBridge</strong></p>
+<p><a href="https://github.com/marcuswestin/WebViewJavascriptBridge" target="_blank" rel="noopener">WebViewJavascriptBridge GitHub 地址</a></p>
+<blockquote>
+<p>创建 src/utils/webViewJavascriptBridge.js 文件，用于封装 WebViewJavascriptBridge<br>将以下代码拷贝到 webViewJavascriptBridge.js 文件中<br>以下代码可区别ios与Android</p>
+</blockquote>
+<pre><code>/**
+     * 函数描述：js调用webview事件
+ *
+ * jsBridge.callHandler(method, data, callBack(response));
+ * @param method {string} 方法名
+ * @param data {Object} 参数
+ * @return {Object} 回调
+ */
+
+/**
+ * 函数描述：webView调用JS事件
+ *
+ * jsBridge.registerHandler(method, callBack(response));
+ * @param method {string} 方法名
+ * @return {Object} 回调
+ */
+
+var JsBridge = {
+  init: function(callback) {
+    var u = navigator.userAgent
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+    if (!isiOS) {
+      if (window.WebViewJavascriptBridge) {
+        callback(window.WebViewJavascriptBridge)
+      } else {
+        document.addEventListener(
+          &apos;WebViewJavascriptBridgeReady&apos;,
+          function() {
+            callback(window.WebViewJavascriptBridge)
+          },
+          false
+        )
+      }
+    } else {
+      if (window.WebViewJavascriptBridge) {
+        return callback(window.WebViewJavascriptBridge)
+      }
+      if (window.WVJBCallbacks) {
+        return window.WVJBCallbacks.push(callback)
+      }
+      window.WVJBCallbacks = [callback]
+      var WVJBIframe = document.createElement(&apos;iframe&apos;)
+      WVJBIframe.style.display = &apos;none&apos;
+      WVJBIframe.src = &apos;wvjbscheme://__BRIDGE_LOADED__&apos;
+      document.documentElement.appendChild(WVJBIframe)
+      setTimeout(function() {
+        document.documentElement.removeChild(WVJBIframe)
+      }, 0)
+    }
+  },
+
+  first: function() {
+    var u = navigator.userAgent
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+    if (!isiOS) {
+      var _this = this
+      _this.init(function(bridge) {
+        bridge.init(function(message, responseCallback) {
+          const data = { result: 0 }
+          responseCallback(data)
+        })
+      })
+    }
+  },
+
+  registerHandler: function(name, fun) {
+    var _this = this
+    _this.init(function(bridge) {
+      bridge.registerHandler(name, fun)
+    })
+  },
+
+  callHandler: function(name, data, fun) {
+    var _this = this
+    _this.init(function(bridge) {
+      bridge.callHandler(name, data, fun)
+    })
+  }
+}
+
+JsBridge.first()
+
+export default {
+  JsBridge
+}
+</code></pre><blockquote>
+<p>引入Bridge</p>
+</blockquote>
+<pre><code>import Bridge from &apos;@/utils/webViewJavascriptBridge.js&apos;
+Vue.prototype.$bridge = Bridge.JsBridge
+</code></pre><blockquote>
+<p>在需要调用客户端方法的组件中（事先需要与客户端同事约定好方法名）</p>
+</blockquote>
+<pre><code>this.$bridge.callHandler(&apos;h5ChangeTitle&apos;, params, (data) =&gt; {
+    // 处理返回数据
+})
+</code></pre><blockquote>
+<p>当客户端需要调用 js 函数时,事先注册约定好的函数即可</p>
+</blockquote>
+<pre><code>this.$bridge.registerhandler(&apos;JS Echo&apos;, (data, responseCallback) =&gt; {
+  alert(&apos;JS Echo called with:&apos;, data)
+  responseCallback(data)
+})
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/12/vue使用WebViewJavascriptBridge联调app/" data-id="cjojsns7v000n3xubc70jcha6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/12/vue仿知乎动态网格效果 particles.js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          particles.js
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/11/微信授权登录拿code（坑）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信授权登录拿code（坑）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小程序/">小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/vue/" style="font-size: 17.5px;">vue</a> <a href="/tags/其他/" style="font-size: 20px;">其他</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/微信/" style="font-size: 12.5px;">微信</a> <a href="/tags/移动端/" style="font-size: 15px;">移动端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/16/Element-ui树形控件el-tree获取父级节点的id/">Element-ui树形控件el-tree获取父级节点的id</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/26/PopupPicker的坑/">vux PopupPicker的坑</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/小程序和vue-calc动态高度/">小程序和vue-calc动态高度,less</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/24/eslint飞起来的写法/">eslint飞起来的写法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/24/vue微信分享支付jssdk全局配置/">vue微信分享支付jssdk全局配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
