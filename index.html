@@ -170,6 +170,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-递归遍历获得层级id" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/递归遍历获得层级id/">递归遍历获得层级id</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/21/递归遍历获得层级id/" class="archive-article-date">
+  	<time datetime="2018-11-21T12:42:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>需求是通过el-tree做一份组织架构的更换部门<br>需要获得最底层的部门的id，和从上累计父部门的id</p>
+<p>在初始化拿数据的时候<br>先递归遍历判断是否是下面有没有子部门<br>有的话累计id，同时记录父部门下有几个子元素，要重复赋值</p>
+<p>赋值到最后一个子元素后要清空父元素，同时传入最上级的id，因为已经被清空了，所有最先记录了</p>
+<pre><code>let father = [] // 暂存父元素id
+let indexNow = 0 // 记录当前子元素第几个
+let indexNum = 0 // 记录父元素下有几个子元素
+let companyId = &apos;&apos; // 记录总公司id
+let index = 0 // 判断是不是第一个总公司
+
+
+function recursive(departmentMenuList) {
+  if (index === 0) {
+    companyId = departmentMenuList[0].departmentId
+  }
+  index++
+  for (var i = 0; i &lt; departmentMenuList.length; i++) {
+    if (departmentMenuList[i].childList) {
+      indexNum = departmentMenuList[i].childList.length
+      father.push(departmentMenuList[i].departmentId)
+      departmentMenuList[i].departmentId = null
+      recursive(departmentMenuList[i].childList)
+    } else {
+      departmentMenuList[i].father = father
+      indexNow++
+      if (indexNum === indexNow) {
+        father = []
+        father.push(companyId)
+        indexNow = 0
+        indexNum = 0
+      }
+    }
+  }
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/21/递归遍历获得层级id/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Element-ui树形控件el-tree获取父级节点的id" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1128,89 +1223,6 @@ Vue.prototype.$bridge = Bridge.JsBridge
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/04/12/vue使用WebViewJavascriptBridge联调app/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-微信授权登录拿code（坑）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/微信授权登录拿code（坑）/">微信授权登录拿code（坑）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/11/微信授权登录拿code（坑）/" class="archive-article-date">
-  	<time datetime="2018-04-11T02:00:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>微信官方api
-https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140842
-
-这样可以拿到code
-https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxec30dc48907effc2&amp;redirect_uri=https://h5.ieou.com/h5_ForMobile/h5_group_buying/index.html%23/&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect
-
-区别在index后面#/ 不懂事什么坑呀
-
-这样拿不到
-https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxec30dc48907effc2&amp;redirect_uri=https://h5.ieou.com/h5_ForMobile/h5_group_buying/index.html&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">微信</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/11/微信授权登录拿code（坑）/">展开全文 >></a>
         </p>
       
 

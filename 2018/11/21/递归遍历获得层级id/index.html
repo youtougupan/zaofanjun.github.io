@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>早饭君的个人博客</title>
+  <title>递归遍历获得层级id | 早饭君的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="早饭君的个人博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="需求是通过el-tree做一份组织架构的更换部门需要获得最底层的部门的id，和从上累计父部门的id 在初始化拿数据的时候先递归遍历判断是否是下面有没有子部门有的话累计id，同时记录父部门下有几个子元素，要重复赋值 赋值到最后一个子元素后要清空父元素，同时传入最上级的id，因为已经被清空了，所有最先记录了 let father = [] // 暂存父元素id let indexNow = 0 //">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归遍历获得层级id">
+<meta property="og:url" content="http://yoursite.com/2018/11/21/递归遍历获得层级id/index.html">
 <meta property="og:site_name" content="早饭君的个人博客">
+<meta property="og:description" content="需求是通过el-tree做一份组织架构的更换部门需要获得最底层的部门的id，和从上累计父部门的id 在初始化拿数据的时候先递归遍历判断是否是下面有没有子部门有的话累计id，同时记录父部门下有几个子元素，要重复赋值 赋值到最后一个子元素后要清空父元素，同时传入最上级的id，因为已经被清空了，所有最先记录了 let father = [] // 暂存父元素id let indexNow = 0 //">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-21T12:48:55.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="早饭君的个人博客">
+<meta name="twitter:title" content="递归遍历获得层级id">
+<meta name="twitter:description" content="需求是通过el-tree做一份组织架构的更换部门需要获得最底层的部门的id，和从上累计父部门的id 在初始化拿数据的时候先递归遍历判断是否是下面有没有子部门有的话累计id，同时记录父部门下有几个子元素，要重复赋值 赋值到最后一个子元素后要清空父元素，同时传入最上级的id，因为已经被清空了，所有最先记录了 let father = [] // 暂存父元素id let indexNow = 0 //">
   
     <link rel="alternative" href="/atom.xml" title="早饭君的个人博客" type="application/atom+xml">
   
@@ -168,991 +172,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-微信授权登录拿code（坑）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-递归遍历获得层级id" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/微信授权登录拿code（坑）/">微信授权登录拿code（坑）</a>
+    <h1 class="article-title" itemprop="name">
+      递归遍历获得层级id
     </h1>
   
 
         
-        <a href="/2018/04/11/微信授权登录拿code（坑）/" class="archive-article-date">
-  	<time datetime="2018-04-11T02:00:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
+        <a href="/2018/11/21/递归遍历获得层级id/" class="archive-article-date">
+  	<time datetime="2018-11-21T12:42:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>微信官方api
-https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140842
-
-这样可以拿到code
-https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxec30dc48907effc2&amp;redirect_uri=https://h5.ieou.com/h5_ForMobile/h5_group_buying/index.html%23/&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect
-
-区别在index后面#/ 不懂事什么坑呀
-
-这样拿不到
-https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxec30dc48907effc2&amp;redirect_uri=https://h5.ieou.com/h5_ForMobile/h5_group_buying/index.html&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">微信</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/11/微信授权登录拿code（坑）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-七牛上传图片前端显示方向错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/七牛上传图片前端显示方向错误/">七牛上传图片前端显示方向错误</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/14/七牛上传图片前端显示方向错误/" class="archive-article-date">
-  	<time datetime="2017-12-14T02:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###【图片引用方向纠正】直接在图片后面添加</p>
-<pre><code>?imageMogr/auto-orient
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/14/七牛上传图片前端显示方向错误/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git忽略规则和-gitignore规则不生效的解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/">Git忽略规则和.gitignore规则不生效的解决办法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/" class="archive-article-date">
-  	<time datetime="2017-12-13T02:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#Git忽略规则：</p>
-<p>在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如果没有这个文件，则需自己手工建立此文件）。这个文件每一行保存了一个匹配的规则例如：</p>
-<p>###此为注释 – 将被 Git 忽略</p>
-<pre><code>*.sample 　　 # 忽略所有 .sample 结尾的文件
-!lib.sample 　　 # 但 lib.sample 除外
-/TODO 　　 # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
-build/ 　　 # 忽略 build/ 目录下的所有文件
-doc/*.txt 　　# 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
-</code></pre><p>###.gitignore规则不生效的解决办法</p>
-<p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：</p>
-<pre><code>git rm -r --cached .
-git add .
-git commit -m &apos;update .gitignore&apos;
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-cli新建项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/vue-cli新建项目/">vue-cli新建项目</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/05/vue-cli新建项目/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:04:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>#前端体系</p>
-<ul>
-<li>框架：Vue2.0<ol>
-<li>MVVM轻量级渐进式框架</li>
-<li>自底向上增量开发的设计，只关注视图层</li>
-<li>易于上手，文档全中文</li>
-</ol>
-</li>
-<li>构建工具：Vue-cli<ol>
-<li>成熟的vue项目结构设计</li>
-<li>本地测试服务器<ol>
-<li>webpack集成打包上线方案</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>PC组件库：ElementUI<ol>
-<li>饿了么团队开发维护的pc端组件库</li>
-<li>完善的组件库 + UI设计库</li>
-<li>相比bootstrap, elementUI的24栅格布局更具灵活性</li>
-</ol>
-</li>
-<li>移动端组件库：VUX<ol>
-<li>易用，实用，美观的移动端UI组件库</li>
-</ol>
-</li>
-<li>html代码风格：h5最新标签<ol>
-<li>header footer article section aside</li>
-</ol>
-</li>
-<li>css代码风格：less预处理语言<ol>
-<li>增加了诸如变量、混合（mixin）、函数等功能</li>
-<li>可以嵌套式写法，可以更好维护css代码</li>
-</ol>
-</li>
-<li>js代码风格：es6<ol>
-<li>使用最新的es6语法开发新一代web前端应用</li>
-<li>例如let、const、箭头函数、template string</li>
-</ol>
-</li>
-<li>包管理工具：Npm<ol>
-<li>世界上最大的包管理器</li>
-</ol>
-</li>
-<li>自动流打包工具：webpack（Vue框架） / gulp（不使用框架）<ol>
-<li>webpack已集成在Vue-cli中</li>
-<li>gulp通过Npm安装使用</li>
-</ol>
-</li>
-<li>代码格式统一工具：eslint（待定，要求太过严格，经常会报错）<ol>
-<li>代码规范和错误检查工具</li>
-</ol>
-</li>
-</ul>
-<hr>
-<p>###AngluarJS1 的劣势：</p>
-<ol>
-<li>致命劣势：官方已经不在维护该框架，未来组件将不会得到更新，时间就了就会被淘汰</li>
-<li>与最新的angular 2相比，完全不一样，与以后的版本脱离，很难升级</li>
-<li>太重</li>
-</ol>
-<p>###Vue2.0 的优势：</p>
-<ol>
-<li>简单：官方文档很清晰，比 Angular 简单易学。</li>
-<li>快速：异步批处理方式更新 DOM。组合：用解耦的、可复用的组件组合你的应用程序。</li>
-<li>紧凑：20kb min+gzip，且无依赖。</li>
-<li>强大：表达式 &amp; 无需声明依赖的可推导属性 (computed properties)。</li>
-<li>对模块友好：可以通过 NPM、Bower 或 Duo 安装，不强迫你所有的代码都遵循 Angular 的各种规定，使用场景更加灵活。</li>
-</ol>
-<hr>
-<p>#前端思想</p>
-<ol>
-<li>用框架就不用JQuery</li>
-<li>数据驱动页面</li>
-<li>组件化编程</li>
-</ol>
-<hr>
-<ol>
-<li><p>全局安装vue-cli<br><code>sudo npm install -g vue-cli</code></p>
-</li>
-<li><p>生成项目<br><code>vue init webpack gu-test</code></p>
-</li>
-<li><p>到达新建目录下<br><code>cd gu-test</code></p>
-</li>
-<li><p>安装依赖<br><code>sudo npm install</code></p>
-</li>
-<li><p>安装路由 网络请求 less<br><code>sudo npm install vue-resource less less-loader json-server --save-dev</code><br><code>npm install npm install vuex --save</code></p>
-</li>
-<li><p>开始运行<br><code>npm run dev</code></p>
-</li>
-<li><p>生成服务器build<br><code>npm run build</code></p>
-</li>
-</ol>
-<h3 id="生成项目时的一些内容"><a href="#生成项目时的一些内容" class="headerlink" title="生成项目时的一些内容"></a><a href="#生成项目时的一些内容" title="生成项目时的一些内容"></a>生成项目时的一些内容</h3><ul>
-<li>Project name gu_vue （名称）<br>Project description A Vue.js project （简介）<br>Author gupan <a href="mailto:gupan@ieou.com" target="_blank" rel="noopener">gupan@ieou.com</a> （作者）<br>Vue build standalone<br>Install vue-router? Yes （是否安装路由）<br>Use ESLint to lint your code? No （ESLint代码检查）<br>Set up unit tests No （测试）<br>Setup e2e tests with Nightwatch? No （测试）</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/05/vue-cli新建项目/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-three-js初上手" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/08/three-js初上手/">three.js初上手</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/08/three-js初上手/" class="archive-article-date">
-  	<time datetime="2017-11-08T02:06:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Cameras（照相机，控制投影方式）</p>
-<pre><code>Camera
-OrthographicCamera 正交投影照相机
-PerspectiveCamera 透视投影照相机
-</code></pre><p>Core（核心对象）</p>
-<pre><code>BufferGeometry
-Clock（用来记录时间）
-EventDispatcher
-Face3
-Face4
-Geometry
-Object3D
-Projector
-Raycaster（计算鼠标拾取物体时很有用的对象）
-</code></pre><p>Lights（光照）</p>
-<pre><code>Light
-AmbientLight
-AreaLight
-DirectionalLight
-HemisphereLight
-PointLight
-SpotLight
-</code></pre><p>Loaders（加载器，用来加载特定文件）</p>
-<pre><code>Loader
-BinaryLoader
-GeometryLoader
-ImageLoader
-JSONLoader
-LoadingMonitor
-SceneLoader
-TextureLoader
-</code></pre><p>Materials（材质，控制物体的颜色、纹理等）</p>
-<pre><code>Material
-LineBasicMaterial
-LineDashedMaterial
-MeshBasicMaterial
-MeshDepthMaterial
-MeshFaceMaterial
-MeshLambertMaterial
-MeshNormalMaterial
-MeshPhongMaterial
-ParticleBasicMaterial
-ParticleCanvasMaterial
-ParticleDOMMaterial
-ShaderMaterial
-SpriteMaterial
-</code></pre><p>Math（和数学相关的对象）</p>
-<pre><code>Box2
-Box3
-Color
-Frustum
-Math
-Matrix3
-Matrix4
-Plane
-Quaternion
-Ray
-Sphere
-Spline
-Triangle
-Vector2
-Vector3
-Vector4
-</code></pre><p>Objects（物体）</p>
-<pre><code>Bone
-Line
-LOD
-Mesh（网格，最常用的物体）
-MorphAnimMesh
-Particle
-ParticleSystem
-Ribbon
-SkinnedMesh
-Sprite
-</code></pre><p>Renderers（渲染器，可以渲染到不同对象上）</p>
-<pre><code>CanvasRenderer
-WebGLRenderer（使用WebGL渲染，这是本书中最常用的方式）
-WebGLRenderTarget
-WebGLRenderTargetCube
-WebGLShaders（着色器，在最后一章作介绍）
-</code></pre><p>Renderers / Renderables</p>
-<pre><code>RenderableFace3
-RenderableFace4
-RenderableLine
-RenderableObject
-RenderableParticle
-RenderableVertex
-</code></pre><p>Scenes（场景）</p>
-<pre><code>Fog
-FogExp2
-Scene
-</code></pre><p>Textures（纹理）</p>
-<pre><code>CompressedTexture
-DataTexture
-Texture
-</code></pre><p>Extras</p>
-<pre><code>FontUtils
-GeometryUtils
-ImageUtils
-SceneUtils
-</code></pre><p>Extras / Animation</p>
-<pre><code>Animation
-AnimationHandler
-AnimationMorphTarget
-KeyFrameAnimation
-</code></pre><p>Extras / Cameras</p>
-<pre><code>CombinedCamera
-CubeCamera
-</code></pre><p>Extras / Core</p>
-<pre><code>Curve
-CurvePath
-Gyroscope
-Path
-Shape
-</code></pre><p>Extras / Geometries（几何形状）</p>
-<pre><code>CircleGeometry
-ConvexGeometry
-CubeGeometry
-CylinderGeometry
-ExtrudeGeometry
-IcosahedronGeometry
-LatheGeometry
-OctahedronGeometry
-ParametricGeometry
-PlaneGeometry
-PolyhedronGeometry
-ShapeGeometry
-SphereGeometry
-TetrahedronGeometry
-TextGeometry
-TorusGeometry
-TorusKnotGeometry
-TubeGeometry
-</code></pre><p>Extras / Helpers</p>
-<pre><code>ArrowHelper
-AxisHelper
-CameraHelper
-DirectionalLightHelper
-HemisphereLightHelper
-PointLightHelper
-SpotLightHelper
-</code></pre><p>Extras / Objects</p>
-<pre><code>ImmediateRenderObject
-LensFlare
-MorphBlendMesh
-</code></pre><p>Extras / Renderers / Plugins</p>
-<pre><code>DepthPassPlugin
-LensFlarePlugin
-ShadowMapPlugin
-SpritePlugin
-</code></pre><p>Extras / Shaders</p>
-<pre><code>ShaderFlares
-ShaderSprite
-</code></pre><p>[</p>
-<p>赏</p>
-<p>谢谢你请我吃糖果</p>
-<p>](javascript:;)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/08/three-js初上手/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-glup生产配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/glup生产配置/">glup生产配置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/glup生产配置/" class="archive-article-date">
-  	<time datetime="2017-10-31T02:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>npm init</li>
-<li>npm install –save-dev gulp</li>
-<li>npm install -save-dev gulp-concat gulp-uglify gulp-minify-css gulp-minify-html gulp-autoprefixer <a href="mailto:jshint@2.x" target="_blank" rel="noopener">jshint@2.x</a> gulp-jshint gulp-imagemin imagemin-pngquant</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/glup生产配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-小程序商品修改" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/小程序商品修改/">小程序商品修改</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/16/小程序商品修改/" class="archive-article-date">
-  	<time datetime="2017-10-16T02:08:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>首页页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>首页可以展示</li>
-<li>推荐商品可以下滑一直加载更多</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>首页banner图和一些推荐广告页点击跳转页面</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>banner图的获取方式是否有问题，index控制器里面index接口的$ad新加，一次加载全部</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>分类页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以正常展示分类</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>缺少分类的图片</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>缺少分类的图片，后台数据库没有传图片</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>分类点击后商品筛选列表页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以展示商品信息</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>暂未增加筛选功能，比如品牌，价钱之类</li>
-<li>分页有问题，加载更多</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>分页有问题，good控制器里goodsList获取商品列表接口的分页不正常，我添加了两个参数代替原来$page 但是不起作用</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>购物车页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以展示，但是不能操作</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>大部分逻辑</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>缺少商品放入购物车后，立刻下单结算的接口和参数，没看明白后台的cart2 cart3 cart4几个接口的意思</li>
-<li>缺少 + - 删除 商品数量的接口，没找到后台</li>
-<li>用户登录后，购物车初始化时商品数量不正确，改过但是没改明白，比如有2个同样商品的，显示的还是1个</li>
-<li>购物车的商品信息到前台，缺少商品图片</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>商品详情页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以展示商品详情，新加展示评论</li>
-<li>可以收藏</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>加入购物车的商品规格未连通</li>
-<li>不能取消收藏</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>待定</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>订单页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>无</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>无</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>购物车下单接口先跑通，在看订单</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/16/小程序商品修改/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-小程序逐帧图制作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/13/小程序逐帧图制作/">小程序逐帧图制作</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/13/小程序逐帧图制作/" class="archive-article-date">
-  	<time datetime="2017-09-13T02:10:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>&lt;canvas canvas-id=&quot;myCanvas&quot; style=&quot;border: 1px solid;&quot;/&gt;
-</code></pre><p>JS</p>
-<pre><code>onLoad: function () {
-    var img = [];
-    for (var i = 0; i &lt; 40; i++) {
-        img.push(&apos;../../images/frame1/&apos; + i + &apos;.png&apos;);
+        <p>需求是通过el-tree做一份组织架构的更换部门<br>需要获得最底层的部门的id，和从上累计父部门的id</p>
+<p>在初始化拿数据的时候<br>先递归遍历判断是否是下面有没有子部门<br>有的话累计id，同时记录父部门下有几个子元素，要重复赋值</p>
+<p>赋值到最后一个子元素后要清空父元素，同时传入最上级的id，因为已经被清空了，所有最先记录了</p>
+<pre><code>let father = [] // 暂存父元素id
+let indexNow = 0 // 记录当前子元素第几个
+let indexNum = 0 // 记录父元素下有几个子元素
+let companyId = &apos;&apos; // 记录总公司id
+let index = 0 // 判断是不是第一个总公司
+
+
+function recursive(departmentMenuList) {
+  if (index === 0) {
+    companyId = departmentMenuList[0].departmentId
+  }
+  index++
+  for (var i = 0; i &lt; departmentMenuList.length; i++) {
+    if (departmentMenuList[i].childList) {
+      indexNum = departmentMenuList[i].childList.length
+      father.push(departmentMenuList[i].departmentId)
+      departmentMenuList[i].departmentId = null
+      recursive(departmentMenuList[i].childList)
+    } else {
+      departmentMenuList[i].father = father
+      indexNow++
+      if (indexNum === indexNow) {
+        father = []
+        father.push(companyId)
+        indexNow = 0
+        indexNum = 0
+      }
     }
-    const ctx = wx.createCanvasContext(&apos;myCanvas&apos;);
-
-    var currentIndex = 0;
-
-    var aaa = setInterval(function () {
-        frame(40);
-    }, 100)
-
-    function frame(num) {
-        if(currentIndex&lt;num){
-            ctx.clearRect(0, 0, 2000, 2000);  //清空画布
-            ctx.drawImage(img[currentIndex], 0, 0, 300, 150);
-            ctx.draw();
-            currentIndex++;
-        }else{
-            clearInterval(aaa);
-        }
-    }
+  }
 }
-</code></pre><p>开发者工具上会有点卡，真机上看流畅<br>本来用的是requestAnimationFrame<br>开发者工具可以用，但是真机是不兼容<br>所以用的setInterval</p>
-
+</code></pre>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/13/小程序逐帧图制作/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/21/递归遍历获得层级id/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/16/Element-ui树形控件el-tree获取父级节点的id/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Element-ui树形控件el-tree获取父级节点的id</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1172,172 +345,14 @@ ShaderSprite
 
 
 
-
-  
-    <article id="post-点击穿透飘浮元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/03/点击穿透飘浮元素/">点击穿透飘浮元素</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/03/点击穿透飘浮元素/" class="archive-article-date">
-  	<time datetime="2017-09-03T02:11:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>类似库博2项目 按钮上面飘浮着很多气泡 在气泡的css加上这条就可以不影响</p>
-</blockquote>
-<pre><code>pointer-events:none;
-</code></pre><blockquote>
-<p>取值：</p>
-</blockquote>
-<p>auto：<br>与pointer-events属性未指定时的表现效果相同。在svg内容上与visiblepainted值相同<br>none：<br>元素永远不会成为鼠标事件的target。但是，当其后代元素的pointer-events属性指定其他值时，鼠标事件可以指向后代元素，在这种情况下，鼠标事件将在捕获或冒泡阶触发父元素的事件侦听器。<br>其他值只能应用在SVG上。</p>
-<blockquote>
-<p>说明：</p>
-</blockquote>
-<p>设置或检索在何时成为属性事件的target。<br>使用pointer-events来阻止元素成为鼠标事件目标不一定意味着元素上的事件侦听器永不会触发。如果元素后代明确指定了pointer-events属性并允许其成为鼠标事件的目标，那么指向该元素的任何事件在事件传播过程中都将通过父元素，并以适当的方式触发其上的事件侦听器。当然位于屏幕上在父元素上但不在后代元素上的鼠标活动都不会被父元素和后代元素捕获（将会穿过父元素而指向位于其下面的元素）。<br>对应的脚本特性为pointerEvents。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/03/点击穿透飘浮元素/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-htaccess" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/01/htaccess/">.htaccess</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/01/htaccess/" class="archive-article-date">
-  	<time datetime="2017-09-01T02:12:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>.htaccess<br>如果没有的话验证码可能会出不来 需要从服务器下载一下</p>
-<p>概述来说，htaccess文件是Apache服务器中的一个配置文件，它负责相关目录下的网页配置。通过htaccess文件，可以帮我们实现：网页301重定向、自定义404错误页面、改变文件扩展名、允许/阻止特定的用户或者目录的访问、禁止目录列表、配置默认文档等功能。<br>Unix、Linux系统或者是任何版本的Apache Web服务器都是支持.htaccess的，但是有的主机服务商可能不允许你自定义自己的.htaccess文件。<br>启用.htaccess，需要修改httpd.conf，启用AllowOverride，并可以用AllowOverride限制特定命令的使用。如果需要使用.htaccess以外的其他文件名，可以用AccessFileName指令来改变。例如，需要使用.config ，则可以在服务器配置文件中按以下方法配置：AccessFileName .config 。<br>笼统地说，.htaccess可以帮我们实现包括：文件夹密码保护、用户自动重定向、自定义错误页面、改变你的文件扩展名、封禁特定IP地址的用户、只允许特定IP地址的用户、禁止目录列表，以及使用其他文件作为index文件等一些功能。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/01/htaccess/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1360,8 +375,8 @@ ShaderSprite
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

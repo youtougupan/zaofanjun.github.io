@@ -170,6 +170,148 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/30/gulp/">gulp</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/30/gulp/" class="archive-article-date">
+  	<time datetime="2017-08-30T02:14:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>全局安装 gulp：</li>
+</ol>
+<blockquote>
+<p>npm install –global gulp</p>
+</blockquote>
+<ol>
+<li>作为项目的开发依赖（devDependencies）安装：</li>
+</ol>
+<blockquote>
+<p>npm install –save-dev gulp</p>
+</blockquote>
+<ol>
+<li>在项目根目录下创建一个名为 gulpfile.js 的文件：</li>
+</ol>
+<blockquote>
+<p>var gulp = require(‘gulp’);</p>
+<p>gulp.task(‘default’, function() {<br>// 将你的默认的任务代码放在这<br>});</p>
+</blockquote>
+<ol>
+<li>运行 gulp：</li>
+</ol>
+<blockquote>
+<p>gulp</p>
+</blockquote>
+<p>gulp合并插件</p>
+<blockquote>
+<p>安装: npm install gulp-concat –save-dev</p>
+</blockquote>
+<p>var concat = require(‘gulp-concat’); //引用<br>接下来，只要concat(‘xxx.js’)就算合并了。注意此时只是在内存中生成</p>
+<p>前面我们学过管道的概念，因此代码整合非常简单<br>gulp.src([这里写上js]).pipe(concat(‘xxx.js’)).pipe(gulp.dest(‘目录’))</p>
+<p>###1.编辑gulpfile.js</p>
+<pre><code>var gp = require(&apos;gulp&apos;);
+var concat = require(&apos;gulp-concat&apos;);
+
+gp.task(&quot;taskName&quot;,function(){
+    // 把1.js和2.js合并为main.js，输出到dest/js目录下
+    gp.src([&apos;1.js&apos;,&apos;2.js&apos;]).pipe(concat(&apos;main.js&apos;)).pipe(gp.dest(&apos;./dest/js&apos;));
+})
+</code></pre><p>###2.执行gulp任务</p>
+<p>gulp taskName<br>1<br>第二个插件：压缩插件</p>
+<blockquote>
+<p>安装：npm install gulp-uglify –save-dev<br>光合并没啥乱用，我们还需要压缩，减少网络传输</p>
+</blockquote>
+<p>这个插件就更简单了<br>var uglify = require(‘gulp-uglify’);<br>uglify()即可，参数都不要</p>
+<p>同样是编辑gulpfile.js</p>
+<pre><code>var gp = require(&apos;gulp&apos;);
+var concat = require(&apos;gulp-concat&apos;);
+var uglify = require(&apos;gulp-uglify&apos;);
+gp.task(&quot;taskName&quot;,function(){
+    // 把1.js和2.js合并压缩为main.js，输出到dest/js目录下
+    gp.src([&apos;1.js&apos;,&apos;2.js&apos;]).pipe(concat(&apos;main.js&apos;)).pipe(uglify()).pipe(gp.dest(&apos;./dest/js&apos;));
+})
+</code></pre><p>执行这个任务后会生成压缩版的main.js</p>
+<p>###3.gulp-minify-css（CSS压缩）<br>npm install –save-dev gulp-minify-css</p>
+<p>可以使用它来压缩CSS文件<br>var gulp = require(‘gulp’);<br>var minify = require(‘gulp-minify-css’);</p>
+<pre><code>gulp.task(&apos;cssmini&apos;, function () {
+    gulp.src([&apos;css/*.css&apos;, &apos;!css/*.min.css&apos;])  //要压缩的css
+        .pipe(minify())
+        .pipe(gulp.dest(&apos;buildcss/&apos;));
+});
+</code></pre><p>###4.gulp-minify-html（html压缩）<br>npm install –save-dev gulp-minify-html</p>
+<p>可以使用它来压缩html文件.<br>var gulp = require(‘gulp’);<br>var htmlmini = require(‘gulp-minify-html’);</p>
+<pre><code>gulp.task(&apos;htmlmini&apos;, function () {
+    gulp.src(&apos;*.html&apos;)
+        .pipe(htmlmini())
+        .pipe(gulp.dest(&apos;minihtml&apos;));
+})
+</code></pre><p><a href="https://segmentfault.com/a/1190000008349859" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008349859</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/30/gulp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-微信移动端的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
