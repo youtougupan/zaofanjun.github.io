@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="早饭君的个人博客">
 <meta property="og:description" content="#奕优前端项目交接 vue + element项目 微仓后台 新版阡陌通后台 掌成后台 npm run dev 是本地启动（接口环境切换在config文件夹下dev.env.js更改）         npm run build 是打包（接口环境切换在config文件夹下prod.env.js更改）           前端vue项目要用vscode + eslint，对代码格式都有要求，多一个空">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T05:55:37.427Z">
+<meta property="og:updated_time" content="2019-04-11T06:01:30.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="奕优前端交接工作">
 <meta name="twitter:description" content="#奕优前端项目交接 vue + element项目 微仓后台 新版阡陌通后台 掌成后台 npm run dev 是本地启动（接口环境切换在config文件夹下dev.env.js更改）         npm run build 是打包（接口环境切换在config文件夹下prod.env.js更改）           前端vue项目要用vscode + eslint，对代码格式都有要求，多一个空">
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/user.jpeg" class="js-avatar">
+			<img src="/ims/WechatIMG231.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">早饭君</a></h1>
@@ -109,7 +109,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/user.jpeg" class="js-avatar">
+				<img src="/ims/WechatIMG231.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">早饭君</h1>
@@ -204,17 +204,13 @@ npm run build 是打包（接口环境切换在config文件夹下prod.env.js更�
 <p>前端vue项目要用vscode + eslint，对代码格式都有要求，多一个空格少一个空格都报错<br>以下是vscode安装设置eslint插件的方法，在我的博客有记载<br><a href="https://zaofanjun.github.io/2018/05/24/eslint%E9%A3%9E%E8%B5%B7%E6%9D%A5%E7%9A%84%E5%86%99%E6%B3%95/" target="_blank" rel="noopener">eslint飞起来的写法</a></p>
 <p>修改源码备注：  </p>
 <ol>
-<li><p>微仓项目的组织架构中，el-tree组件，为了符合业务需求更改过源码，从git上down下来，npm安装依赖的时候，记得要修改一下源码，不然业务上会有问题，我已经复制一份修改过的源码放在微仓后台根目录下可以搜索复制</p>
-<pre><code>1.找到node_modules/element-ui/lib/element-ui.common.js文件
-
-2.按Ctrl+F搜索TreeStore.prototype.getCheckedKeys这个方法
-
-3.把if(node.checked)改为if (node.checked||node.indeterminate) 如下图：
-
-4.还要新写一个getCheckedAllKeys方法（参考复制文件）
-</code></pre></li>
+<li>微仓项目的组织架构中，el-tree组件，为了符合业务需求更改过源码，从git上down下来，npm安装依赖的时候，记得要修改一下源码，不然业务上会有问题，我已经复制一份修改过的源码放在微仓后台根目录下可以搜索复制</li>
 </ol>
-<h3 id="react-fusion项目"><a href="#react-fusion项目" class="headerlink" title="react + fusion项目"></a>react + fusion项目</h3><ul>
+<pre><code>1.找到node_modules/element-ui/lib/element-ui.common.js文件    
+2.按Ctrl+F搜索TreeStore.prototype.getCheckedKeys这个方法
+3.把if(node.checked)改为if (node.checked||node.indeterminate) 如下图：
+4.还要新写一个getCheckedAllKeys方法（参考复制文件）
+</code></pre><h3 id="react-fusion项目"><a href="#react-fusion项目" class="headerlink" title="react + fusion项目"></a>react + fusion项目</h3><ul>
 <li>微仓内部后台</li>
 <li>微仓官网</li>
 </ul>
