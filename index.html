@@ -170,6 +170,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue和react区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/vue和react区别/">vue和react区别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/vue和react区别/" class="archive-article-date">
+  	<time datetime="2019-03-12T08:27:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。<br>使用react和vue，主要是理解他们的设计思路的不同。</p>
+<p>##1.数据的可变性</p>
+<ul>
+<li><p>react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流</p>
+</li>
+<li><p>vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对应的虚拟dom,是双向数据流。</p>
+</li>
+</ul>
+<blockquote>
+<p>react的性能优化需要手动去做，而vue的性能优化是自动的，但是vue的响应式机制也有问题，就是当state特别多的时候，Watcher也会很多，会导致卡顿，所以大型应用（状态特别多的）一般用react，更加可控</p>
+</blockquote>
+<p>##2.处理方式</p>
+<ul>
+<li><p>react使用jsx</p>
+</li>
+<li><p>vue单文件html，css，js组合</p>
+</li>
+</ul>
+<p>##3.写法</p>
+<ul>
+<li><p>react是类式的写法，更类似于后端java</p>
+</li>
+<li><p>vue是声明式的写法，通过传入各种options，api和参数都很多。</p>
+</li>
+</ul>
+<blockquote>
+<p>所以react结合typescript更容易一起写，vue稍微复杂。<br>vue3.0支持类式写法</p>
+</blockquote>
+<p>###4.功能和社区</p>
+<ul>
+<li>react做的事情很少，很多都交给社区去做</li>
+<li>vue很多东西都是内置的，写起来确实方便一些</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/vue和react区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-最近前端体会" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -177,13 +272,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/最近前端体会/">最近前端体会</a>
+      <a class="article-title" href="/2019/02/11/最近前端体会/">最近前端体会</a>
     </h1>
   
 
         
-        <a href="/2019/04/11/最近前端体会/" class="archive-article-date">
-  	<time datetime="2019-04-11T05:55:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
+        <a href="/2019/02/11/最近前端体会/" class="archive-article-date">
+  	<time datetime="2019-02-11T05:55:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-11</time>
 </a>
         
       </header>
@@ -234,7 +329,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/11/最近前端体会/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/11/最近前端体会/">展开全文 >></a>
         </p>
       
 
@@ -1015,125 +1110,6 @@ function recursive(departmentMenuList) {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/04/18/vuex状态持久化，vuex-persistedstate/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="vue仿知乎动态网格效果-particles.js-vue仿知乎动态网格效果 particles.js" class="article article-type-vue仿知乎动态网格效果-particles.js  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/12/vue仿知乎动态网格效果 particles.js/">particles.js</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/12/vue仿知乎动态网格效果 particles.js/" class="archive-article-date">
-  	<time datetime="2018-04-12T01:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="知乎动态网格效果-用的是particles-js"><a href="#知乎动态网格效果-用的是particles-js" class="headerlink" title="知乎动态网格效果 用的是particles.js"></a><a href="#知乎动态网格效果-用的是particles-js" title="知乎动态网格效果 用的是particles.js"></a>知乎动态网格效果 用的是particles.js</h3><blockquote>
-<p>本次项目用的是vue2.0 所以安装的是vue-particles<br>在低性能的电脑上有点卡 如果在屏幕点击多下 也有可能动态网格组件造成卡死的情况 但是网页其他组件还能继续操作 待研究</p>
-</blockquote>
-<p>效果如下<br><img src="/img/WechatIMG70.jpeg" alt="图片"></p>
-<p>1.下载依赖</p>
-<pre><code>npm install vue-particles --save-dev
-</code></pre><p>2.main.js引入</p>
-<pre><code>import Vue from &apos;vue&apos;
-import VueParticles from &apos;vue-particles&apos;
-Vue.use(VueParticles)
-</code></pre><p>3.直接使用</p>
-<pre><code>&lt;vue-particles
-    color=&quot;#dedede&quot;
-    :particleOpacity=&quot;0.7&quot;
-    :particlesNumber=&quot;80&quot;
-    shapeType=&quot;circle&quot;
-    :particleSize=&quot;4&quot;
-    linesColor=&quot;#dedede&quot;
-    :linesWidth=&quot;1&quot;
-    :lineLinked=&quot;true&quot;
-    :lineOpacity=&quot;0.4&quot;
-    :linesDistance=&quot;150&quot;
-    :moveSpeed=&quot;3&quot;
-    :hoverEffect=&quot;true&quot;
-    hoverMode=&quot;grab&quot;
-    :clickEffect=&quot;true&quot;
-    clickMode=&quot;push&quot;
-  &gt;
-  &lt;/vue-particles&gt;
-</code></pre><p>4.属性含义</p>
-<pre><code> color: String类型。默认&apos;#dedede&apos;。粒子颜色。
-particleOpacity: Number类型。默认0.7。粒子透明度。
-particlesNumber: Number类型。默认80。粒子数量。
-shapeType: String类型。默认&apos;circle&apos;。可用的粒子外观类型有：&quot;circle&quot;,&quot;edge&quot;,&quot;triangle&quot;, &quot;polygon&quot;,&quot;star&quot;。
-particleSize: Number类型。默认80。单个粒子大小。
-linesColor: String类型。默认&apos;#dedede&apos;。线条颜色。
-linesWidth: Number类型。默认1。线条宽度。
-lineLinked: 布尔类型。默认true。连接线是否可用。
-lineOpacity: Number类型。默认0.4。线条透明度。
-linesDistance: Number类型。默认150。线条距离。
-moveSpeed: Number类型。默认3。粒子运动速度。
-hoverEffect: 布尔类型。默认true。是否有hover特效。
-hoverMode: String类型。默认true。可用的hover模式有: &quot;grab&quot;, &quot;repulse&quot;, &quot;bubble&quot;。
-clickEffect: 布尔类型。默认true。是否有click特效。
-clickMode: String类型。默认true。可用的click模式有: &quot;push&quot;, &quot;remove&quot;, &quot;repulse&quot;, &quot;bubble&quot;
-复制代码
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/12/vue仿知乎动态网格效果 particles.js/">展开全文 >></a>
         </p>
       
 
