@@ -170,6 +170,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vuex状态持久化，vuex-persistedstate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/18/vuex状态持久化，vuex-persistedstate/">vuex状态持久化，vuex-persistedstate</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/18/vuex状态持久化，vuex-persistedstate/" class="archive-article-date">
+  	<time datetime="2018-04-18T01:50:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是Vuex"><a href="#什么是Vuex" class="headerlink" title="什么是Vuex"></a><a href="#什么是Vuex" title="什么是Vuex"></a>什么是Vuex</h2><blockquote>
+<p>Vuex是一个专门为vue.js设计的集中式状态管理架构。状态？我把它理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。</p>
+</blockquote>
+<h2 id="数据丢失"><a href="#数据丢失" class="headerlink" title="数据丢失"></a><a href="#数据丢失" title="数据丢失"></a>数据丢失</h2><p>大家在使用Vuex的时候只要浏览器一刷新，Vuex数据就丢失，每次还要手动存在本地缓存里面很不方便，今天找了一下，发现有个小插件可以保持Vuex的持久性</p>
+<blockquote>
+<p>原理大家都懂，就是存localStorage.用法</p>
+</blockquote>
+<h2 id="vuex-persistedstate"><a href="#vuex-persistedstate" class="headerlink" title="vuex-persistedstate"></a><a href="#vuex-persistedstate" title="vuex-persistedstate"></a>vuex-persistedstate</h2><blockquote>
+<p>vuex-persistedstate 使用浏览器的本地存储（ local storage ）对状态（ state ）进行持久化。这意味着刷新页面或关闭标签页都不会删除你的数据。</p>
+</blockquote>
+<p><a href="https://github.com/robinvdvleuten/vuex-persistedstate" target="_blank" rel="noopener">vuex-persistedstate GitHub 地址</a></p>
+<p>首先安装</p>
+<pre><code>npm install vuex-persistedstate --save
+</code></pre><p>在store文件夹的index.js引入</p>
+<pre><code>import createPersistedState from &apos;vuex-persistedstate&apos;
+</code></pre><p>初始化vuex 加入插件</p>
+<pre><code>const store = new Vuex.Store({
+  modules: {
+    user,
+    groupBuying,
+    clearance
+  },
+  getters,
+  plugins: [createPersistedState()]
+})
+</code></pre><p>默认用的是localStorage的存储方式，因为本项目需求需要改成sessionStorage的存储方式，在配置里面改为，如果有其他配置可以参考官方api</p>
+<pre><code>plugins: [createPersistedState(
+    { storage: window.sessionStorage }
+  )]
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/18/vuex状态持久化，vuex-persistedstate/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="vue仿知乎动态网格效果-particles.js-vue仿知乎动态网格效果 particles.js" class="article article-type-vue仿知乎动态网格效果-particles.js  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1376,106 +1478,6 @@ ShaderSprite
 
 
   
-    <article id="post-小程序逐帧图制作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/13/小程序逐帧图制作/">小程序逐帧图制作</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/13/小程序逐帧图制作/" class="archive-article-date">
-  	<time datetime="2017-09-13T02:10:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>&lt;canvas canvas-id=&quot;myCanvas&quot; style=&quot;border: 1px solid;&quot;/&gt;
-</code></pre><p>JS</p>
-<pre><code>onLoad: function () {
-    var img = [];
-    for (var i = 0; i &lt; 40; i++) {
-        img.push(&apos;../../images/frame1/&apos; + i + &apos;.png&apos;);
-    }
-    const ctx = wx.createCanvasContext(&apos;myCanvas&apos;);
-
-    var currentIndex = 0;
-
-    var aaa = setInterval(function () {
-        frame(40);
-    }, 100)
-
-    function frame(num) {
-        if(currentIndex&lt;num){
-            ctx.clearRect(0, 0, 2000, 2000);  //清空画布
-            ctx.drawImage(img[currentIndex], 0, 0, 300, 150);
-            ctx.draw();
-            currentIndex++;
-        }else{
-            clearInterval(aaa);
-        }
-    }
-}
-</code></pre><p>开发者工具上会有点卡，真机上看流畅<br>本来用的是requestAnimationFrame<br>开发者工具可以用，但是真机是不兼容<br>所以用的setInterval</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/13/小程序逐帧图制作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1585,11 +1587,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">

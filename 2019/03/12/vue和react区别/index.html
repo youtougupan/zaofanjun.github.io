@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue和react区别 | 早饭君的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。使用react和vue，主要是理解他们的设计思路的不同。 ##1.数据的可变性  react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流  vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对">
+  <meta name="description" content="react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。使用react和vue，主要是理解他们的设计思路的不同。 1.数据的可变性 react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流  vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对应的虚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue和react区别">
 <meta property="og:url" content="http://yoursite.com/2019/03/12/vue和react区别/index.html">
 <meta property="og:site_name" content="早饭君的个人博客">
-<meta property="og:description" content="react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。使用react和vue，主要是理解他们的设计思路的不同。 ##1.数据的可变性  react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流  vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对">
+<meta property="og:description" content="react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。使用react和vue，主要是理解他们的设计思路的不同。 1.数据的可变性 react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流  vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对应的虚">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-12T08:35:03.304Z">
+<meta property="og:updated_time" content="2019-04-12T09:17:44.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue和react区别">
-<meta name="twitter:description" content="react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。使用react和vue，主要是理解他们的设计思路的不同。 ##1.数据的可变性  react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流  vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对">
+<meta name="twitter:description" content="react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。使用react和vue，主要是理解他们的设计思路的不同。 1.数据的可变性 react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流  vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对应的虚">
   
     <link rel="alternative" href="/atom.xml" title="早饭君的个人博客" type="application/atom+xml">
   
@@ -193,8 +193,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>react和vue都是做组件化的，整体的功能都类似，但是他们的设计思路是有很多不同的。<br>使用react和vue，主要是理解他们的设计思路的不同。</p>
-<p>##1.数据的可变性</p>
-<ul>
+<h2 id="1-数据的可变性"><a href="#1-数据的可变性" class="headerlink" title="1.数据的可变性"></a>1.数据的可变性</h2><ul>
 <li><p>react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流</p>
 </li>
 <li><p>vue的思想是响应式的，也就是基于是数据可变的，通过对每一个属性建立Watcher来监听，当属性变化的时候，响应式的更新对应的虚拟dom,是双向数据流。</p>
@@ -203,15 +202,13 @@
 <blockquote>
 <p>react的性能优化需要手动去做，而vue的性能优化是自动的，但是vue的响应式机制也有问题，就是当state特别多的时候，Watcher也会很多，会导致卡顿，所以大型应用（状态特别多的）一般用react，更加可控</p>
 </blockquote>
-<p>##2.处理方式</p>
-<ul>
+<h2 id="2-处理方式"><a href="#2-处理方式" class="headerlink" title="2.处理方式"></a>2.处理方式</h2><ul>
 <li><p>react使用jsx</p>
 </li>
 <li><p>vue单文件html，css，js组合</p>
 </li>
 </ul>
-<p>##3.写法</p>
-<ul>
+<h2 id="3-写法"><a href="#3-写法" class="headerlink" title="3.写法"></a>3.写法</h2><ul>
 <li><p>react是类式的写法，更类似于后端java</p>
 </li>
 <li><p>vue是声明式的写法，通过传入各种options，api和参数都很多。</p>
@@ -220,8 +217,7 @@
 <blockquote>
 <p>所以react结合typescript更容易一起写，vue稍微复杂。<br>vue3.0支持类式写法</p>
 </blockquote>
-<p>###4.功能和社区</p>
-<ul>
+<h2 id="4-功能和社区"><a href="#4-功能和社区" class="headerlink" title="4.功能和社区"></a>4.功能和社区</h2><ul>
 <li>react做的事情很少，很多都交给社区去做</li>
 <li>vue很多东西都是内置的，写起来确实方便一些</li>
 </ul>
@@ -317,6 +313,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/04/16/setTimeout、setInterval被遗忘的第三个参数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          setTimeout、setInterval被遗忘的第三个参数
+        
+      </div>
+    </a>
   
   
     <a href="/2019/02/11/最近前端体会/" id="article-nav-older" class="article-nav-link-wrap">
@@ -458,11 +463,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
