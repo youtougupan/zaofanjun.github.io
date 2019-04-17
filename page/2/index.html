@@ -170,6 +170,289 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-eslint飞起来的写法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/24/eslint飞起来的写法/">eslint飞起来的写法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/24/eslint飞起来的写法/" class="archive-article-date">
+  	<time datetime="2018-05-24T01:35:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a><a href="#ESLint" title="ESLint"></a>ESLint</h3><p>不管是多人合作还是个人项目，代码规范是很重要的。这样做不仅可以很大程度地避免基本语法错误，也保证了代码的可读性。这所谓工欲善其事，必先利其器，个人推荐 eslint+vscode 来写 vue，绝对有种飞一般的感觉。效果如图：</p>
+<p><img src="/img/1220974454-590ab68f259f3.gif" alt="图片"></p>
+<p>每次保存，vscode就能标红不符合eslint规则的地方，同时还会做一些简单的自我修正。安装步骤如下：</p>
+<p>首先安装eslint插件</p>
+<p><img src="/img/2596318045-590d5abd9953a.png" alt="图片"></p>
+<p>安装并配置完成 ESLint 后，我们继续回到 VSCode 进行扩展设置，依次点击 文件 &gt; 首选项 &gt; 设置 打开 VSCode 配置文件,添加如下配置</p>
+<pre><code>{
+&quot;files.autoSave&quot;:&quot;off&quot;,
+&quot;eslint.validate&quot;: [
+   &quot;javascript&quot;,
+   &quot;javascriptreact&quot;,
+   &quot;html&quot;,
+   { &quot;language&quot;: &quot;vue&quot;, &quot;autoFix&quot;: true }
+ ],
+ &quot;eslint.options&quot;: {
+    &quot;plugins&quot;: [&quot;html&quot;]
+ }，
+ &quot;eslint.autoFixOnSave&quot;: true,
+}
+</code></pre><p>这样每次保存的时候就可以根据根目录下.eslintrc.js你配置的eslint规则来检查和做一些简单的fix。</p>
+<p><a href="https://segmentfault.com/a/1190000009275424" target="_blank" rel="noopener">本文转载至PanJiaChen博客</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/24/eslint飞起来的写法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue微信分享支付jssdk全局配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/24/vue微信分享支付jssdk全局配置/">vue微信分享支付jssdk全局配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/24/vue微信分享支付jssdk全局配置/" class="archive-article-date">
+  	<time datetime="2018-04-24T01:47:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很坑阿<br>在vue里面使用jssdk</p>
+<h3 id="根据业务场景"><a href="#根据业务场景" class="headerlink" title="根据业务场景"></a><a href="#根据业务场景" title="根据业务场景"></a>根据业务场景</h3><ol>
+<li>首先拿到code</li>
+<li>把code发给后端，解析出openId和accessToken</li>
+<li>接着把当前页面网址发给后端，申请jsSDK的配置签名</li>
+<li>拿到之后再前端配置wx.config</li>
+<li>再调用jssdk相关方法</li>
+</ol>
+<p>安装jssdk:<br><code>npm install weixin-js-sdk --save-dev</code></p>
+<blockquote>
+<p>只展示部分重要代码</p>
+</blockquote>
+<h3 id="在permission-js文件里-跳转路由的钩子事件里-router-beforeEach"><a href="#在permission-js文件里-跳转路由的钩子事件里-router-beforeEach" class="headerlink" title="在permission.js文件里 跳转路由的钩子事件里 router.beforeEach"></a><a href="#在permission-js文件里-跳转路由的钩子事件里-router-beforeEach" title="在permission.js文件里 跳转路由的钩子事件里 router.beforeEach"></a>在permission.js文件里 跳转路由的钩子事件里 router.beforeEach</h3><h3 id="1-首先拿到code"><a href="#1-首先拿到code" class="headerlink" title="1. 首先拿到code"></a><a href="#1-首先拿到code" title="1. 首先拿到code"></a>1. 首先拿到code</h3><pre><code>const openCode = getQueryString(&apos;code&apos;) ? getQueryString(&apos;code&apos;) : &apos;&apos;
+</code></pre><h3 id="2-把code发给后端，解析出openId和accessToken"><a href="#2-把code发给后端，解析出openId和accessToken" class="headerlink" title="2. 把code发给后端，解析出openId和accessToken"></a><a href="#2-把code发给后端，解析出openId和accessToken" title="2. 把code发给后端，解析出openId和accessToken"></a>2. 把code发给后端，解析出openId和accessToken</h3><pre><code>const tokenPromisr = new Promise((resolve, reject) =&gt; {
+    checkOpenId({ openCode }).then(res =&gt; {
+      resolve()
+    }).catch(error =&gt; {
+      reject(error)
+    })
+  })
+</code></pre><h3 id="3-接着把当前页面网址发给后端，申请jsSDK的配置签名"><a href="#3-接着把当前页面网址发给后端，申请jsSDK的配置签名" class="headerlink" title="3. 接着把当前页面网址发给后端，申请jsSDK的配置签名"></a><a href="#3-接着把当前页面网址发给后端，申请jsSDK的配置签名" title="3. 接着把当前页面网址发给后端，申请jsSDK的配置签名"></a>3. 接着把当前页面网址发给后端，申请jsSDK的配置签名</h3><pre><code>**用Promise是因为要等拿到accessToken了再继续**
+
+    tokenPromisr.then(() =&gt; {
+        jsSDK({
+          url
+        }).then(res =&gt; {
+          wechatConfig(res.data)
+        })
+      })
+</code></pre><h3 id="4-拿到之后再前端配置wx-config"><a href="#4-拿到之后再前端配置wx-config" class="headerlink" title="4. 拿到之后再前端配置wx.config"></a><a href="#4-拿到之后再前端配置wx-config" title="4. 拿到之后再前端配置wx.config"></a>4. 拿到之后再前端配置wx.config</h3><pre><code>**暂时只用了分享和支付的权限**
+
+    export function wechatConfig(config) {
+          wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: config.appId, // 必填，公众号的唯一标识
+            timestamp: config.timeStamp, // 必填，生成签名的时间戳
+            nonceStr: config.nonceStr, // 必填，生成签名的随机串
+            signature: config.signature, // 必填，签名，见附录1
+            jsApiList: [&apos;onMenuShareAppMessage&apos;, &apos;onMenuShareTimeline&apos;, &apos;chooseWXPay&apos;] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+          })
+        }
+</code></pre><h3 id="5-接着需要的页面里面去使用-我在首页用了分享-还有在支付页面用了支付"><a href="#5-接着需要的页面里面去使用-我在首页用了分享-还有在支付页面用了支付" class="headerlink" title="5. 接着需要的页面里面去使用 我在首页用了分享 还有在支付页面用了支付"></a><a href="#5-接着需要的页面里面去使用-我在首页用了分享-还有在支付页面用了支付" title="5. 接着需要的页面里面去使用 我在首页用了分享         还有在支付页面用了支付"></a>5. 接着需要的页面里面去使用 我在首页用了分享 还有在支付页面用了支付</h3><hr>
+<blockquote>
+<p>分享</p>
+</blockquote>
+<pre><code>export function groupWechatShare(data, cb, errorCb) {
+  const img = data.pictureKeys ? data.pictureKeys[0] : &apos;&apos;
+  const wechatState = store.getters.wechatState
+  const SHARE_URL = process.env.SHARE_URL
+  const IMG_URL = process.env.IMG_URL
+  wx.ready(function() {
+    // 分享到朋友圈
+    wx.onMenuShareTimeline({
+      title: data.goodsName, // 分享标题
+      link: SHARE_URL, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: IMG_URL + img, // 分享图标
+      success: function(res) {
+        // 用户确认分享后执行的回调函数
+        // cb(res)
+      },
+      cancel: function(res) {
+        // 用户取消分享后执行的回调函数
+        // errorCb(res)
+      }
+    })
+    // 分享给朋友
+    wx.onMenuShareAppMessage({
+      title: data.goodsName, // 分享标题
+      desc: &apos;邀请您一起拼团啊&apos;, // 分享描述
+      link: SHARE_URL, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: IMG_URL + img, // 分享图标
+      type: &apos;&apos;, // 分享类型,music、video或link，不填默认为link
+      dataUrl: &apos;&apos;, // 如果type是music或video，则要提供数据链接，默认为空
+      success: function(res) {
+        // 用户确认分享后执行的回调函数
+        // cb(res)
+      },
+      cancel: function(res) {
+        // 用户取消分享后执行的回调函数
+        // errorCb(res)
+      }
+    })
+  })
+}
+</code></pre><hr>
+<blockquote>
+<p>支付</p>
+</blockquote>
+<pre><code>export function wexinPay(data, cb, errorCb) {
+  wx.ready(function() {
+    wx.chooseWXPay({
+      timestamp: parseInt(data.timeStamp), // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+      nonceStr: data.nonce_str, // 支付签名随机串，不长于 32 位
+      package: &apos;prepay_id=&apos; + data.prepay_id, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+      signType: &apos;MD5&apos;, // 签名方式，默认为&apos;SHA1&apos;，使用新版支付需传入&apos;MD5&apos;
+      paySign: data.paySign, // 支付签名
+      success: function(res) {
+        // 支付成功后的回调函数
+        cb(res)
+      },
+      fail: function(res) {
+        errorCb(res)
+      }
+    })
+  })
+  wx.error(function(res) {
+    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+    /* alert(&quot;config信息验证失败&quot;);*/
+  })
+}
+</code></pre><h1 id="坑的地方"><a href="#坑的地方" class="headerlink" title="坑的地方"></a><a href="#坑的地方" title="坑的地方"></a>坑的地方</h1><ol>
+<li>注意大小写参数 timestamp类似这种写成timeStamp 曾经卡了好几个小时都没检查出来</li>
+<li>获取jssdk配置的url 一定要写成 <code>const url = window.location.href.split(&#39;#&#39;)[0]</code></li>
+<li>配置要配置好 支付目录 js安全目录什么的 杂七杂八的</li>
+<li>timestamp一定是int类型，后端如果反的string类型的，前端就会报错 <strong>调用支付JSAPI缺少参数：sign</strong></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/24/vue微信分享支付jssdk全局配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="webpack打包忽略css, autoprefixer的坑-webpack打包忽略css, autoprefixer的坑" class="article article-type-webpack打包忽略css, autoprefixer的坑  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1074,317 +1357,9 @@ git commit -m &apos;update .gitignore&apos;
 
 
   
-    <article id="post-three-js初上手" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/08/three-js初上手/">three.js初上手</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/08/three-js初上手/" class="archive-article-date">
-  	<time datetime="2017-11-08T02:06:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Cameras（照相机，控制投影方式）</p>
-<pre><code>Camera
-OrthographicCamera 正交投影照相机
-PerspectiveCamera 透视投影照相机
-</code></pre><p>Core（核心对象）</p>
-<pre><code>BufferGeometry
-Clock（用来记录时间）
-EventDispatcher
-Face3
-Face4
-Geometry
-Object3D
-Projector
-Raycaster（计算鼠标拾取物体时很有用的对象）
-</code></pre><p>Lights（光照）</p>
-<pre><code>Light
-AmbientLight
-AreaLight
-DirectionalLight
-HemisphereLight
-PointLight
-SpotLight
-</code></pre><p>Loaders（加载器，用来加载特定文件）</p>
-<pre><code>Loader
-BinaryLoader
-GeometryLoader
-ImageLoader
-JSONLoader
-LoadingMonitor
-SceneLoader
-TextureLoader
-</code></pre><p>Materials（材质，控制物体的颜色、纹理等）</p>
-<pre><code>Material
-LineBasicMaterial
-LineDashedMaterial
-MeshBasicMaterial
-MeshDepthMaterial
-MeshFaceMaterial
-MeshLambertMaterial
-MeshNormalMaterial
-MeshPhongMaterial
-ParticleBasicMaterial
-ParticleCanvasMaterial
-ParticleDOMMaterial
-ShaderMaterial
-SpriteMaterial
-</code></pre><p>Math（和数学相关的对象）</p>
-<pre><code>Box2
-Box3
-Color
-Frustum
-Math
-Matrix3
-Matrix4
-Plane
-Quaternion
-Ray
-Sphere
-Spline
-Triangle
-Vector2
-Vector3
-Vector4
-</code></pre><p>Objects（物体）</p>
-<pre><code>Bone
-Line
-LOD
-Mesh（网格，最常用的物体）
-MorphAnimMesh
-Particle
-ParticleSystem
-Ribbon
-SkinnedMesh
-Sprite
-</code></pre><p>Renderers（渲染器，可以渲染到不同对象上）</p>
-<pre><code>CanvasRenderer
-WebGLRenderer（使用WebGL渲染，这是本书中最常用的方式）
-WebGLRenderTarget
-WebGLRenderTargetCube
-WebGLShaders（着色器，在最后一章作介绍）
-</code></pre><p>Renderers / Renderables</p>
-<pre><code>RenderableFace3
-RenderableFace4
-RenderableLine
-RenderableObject
-RenderableParticle
-RenderableVertex
-</code></pre><p>Scenes（场景）</p>
-<pre><code>Fog
-FogExp2
-Scene
-</code></pre><p>Textures（纹理）</p>
-<pre><code>CompressedTexture
-DataTexture
-Texture
-</code></pre><p>Extras</p>
-<pre><code>FontUtils
-GeometryUtils
-ImageUtils
-SceneUtils
-</code></pre><p>Extras / Animation</p>
-<pre><code>Animation
-AnimationHandler
-AnimationMorphTarget
-KeyFrameAnimation
-</code></pre><p>Extras / Cameras</p>
-<pre><code>CombinedCamera
-CubeCamera
-</code></pre><p>Extras / Core</p>
-<pre><code>Curve
-CurvePath
-Gyroscope
-Path
-Shape
-</code></pre><p>Extras / Geometries（几何形状）</p>
-<pre><code>CircleGeometry
-ConvexGeometry
-CubeGeometry
-CylinderGeometry
-ExtrudeGeometry
-IcosahedronGeometry
-LatheGeometry
-OctahedronGeometry
-ParametricGeometry
-PlaneGeometry
-PolyhedronGeometry
-ShapeGeometry
-SphereGeometry
-TetrahedronGeometry
-TextGeometry
-TorusGeometry
-TorusKnotGeometry
-TubeGeometry
-</code></pre><p>Extras / Helpers</p>
-<pre><code>ArrowHelper
-AxisHelper
-CameraHelper
-DirectionalLightHelper
-HemisphereLightHelper
-PointLightHelper
-SpotLightHelper
-</code></pre><p>Extras / Objects</p>
-<pre><code>ImmediateRenderObject
-LensFlare
-MorphBlendMesh
-</code></pre><p>Extras / Renderers / Plugins</p>
-<pre><code>DepthPassPlugin
-LensFlarePlugin
-ShadowMapPlugin
-SpritePlugin
-</code></pre><p>Extras / Shaders</p>
-<pre><code>ShaderFlares
-ShaderSprite
-</code></pre><p>[</p>
-<p>赏</p>
-<p>谢谢你请我吃糖果</p>
-<p>](javascript:;)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/08/three-js初上手/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-glup生产配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/glup生产配置/">glup生产配置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/glup生产配置/" class="archive-article-date">
-  	<time datetime="2017-10-31T02:07:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>npm init</li>
-<li>npm install –save-dev gulp</li>
-<li>npm install -save-dev gulp-concat gulp-uglify gulp-minify-css gulp-minify-html gulp-autoprefixer <a href="mailto:jshint@2.x" target="_blank" rel="noopener">jshint@2.x</a> gulp-jshint gulp-imagemin imagemin-pngquant</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/glup生产配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1495,11 +1470,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
             
             <div class="clearfix"></div>

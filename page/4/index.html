@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>移动rem响应式布局 | 早饭君的个人博客</title>
+  <title>早饭君的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
-<meta name="keywords" content="移动端">
-<meta property="og:type" content="article">
-<meta property="og:title" content="移动rem响应式布局">
-<meta property="og:url" content="http://yoursite.com/2017/08/21/移动rem响应式布局/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="早饭君的个人博客">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="早饭君的个人博客">
-<meta property="og:description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-18T02:18:50.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动rem响应式布局">
-<meta name="twitter:description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
+<meta name="twitter:title" content="早饭君的个人博客">
   
     <link rel="alternative" href="/atom.xml" title="早饭君的个人博客" type="application/atom+xml">
   
@@ -173,69 +168,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-移动rem响应式布局" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-移动端缩放响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      移动rem响应式布局
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/21/移动端缩放响应式布局/">移动端缩放响应式布局</a>
     </h1>
   
 
         
-        <a href="/2017/08/21/移动rem响应式布局/" class="archive-article-date">
-  	<time datetime="2017-08-21T02:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+        <a href="/2017/08/21/移动端缩放响应式布局/" class="archive-article-date">
+  	<time datetime="2017-08-21T02:17:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">https://github.com/amfe/lib-flexible</a></p>
-<p>利用手淘的js 根据屏幕尺寸控制html标签font-size的大小</p>
-<p>默认iphone6 width为750px</p>
-<p>lib-flexible把屏幕等分为10份 html的font-size就为75px</p>
-<p>再次利用less</p>
-<p>推荐用webstorm编辑器可以自动编译less</p>
-<pre><code>@a:75rem; //设置个变量
-
-.div{
-width: 375/@a; //所有单位用px去除以75
-height: 375/@a;
-background-color: red;
-}
-</code></pre><p>编译出来就是，less文件也方便后期维护和修改数值</p>
-<pre><code>.div {
-    width: 5rem;
-    height: 5rem;
-    background-color: red;
-}
+        <p>移动端缩放响应式布局是一些简单的h5页面应用的<br>原理就是根据屏幕的尺寸 通过js缩放</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+  var isAndroid = false;
+  function addViewPort() {
+    var phoneWidth = parseInt(window.screen.width),
+        phoneScale = phoneWidth / 750,
+        ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)) {
+      isAndroid = true;
+      var version = parseFloat(RegExp.$1);
+      // andriod 2.3
+      if (version &gt; 2.3) {
+        document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=750, minimum-scale = &apos; + phoneScale + &apos;, maximum-scale = &apos; + phoneScale + &apos;, target-densitydpi=device-dpi&quot;&gt;&apos;);
+        // andriod 2.3以上
+      } else {
+        document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=750, target-densitydpi=device-dpi&quot;&gt;&apos;);
+      }
+      // 其他系统
+    } else {
+      document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=750, minimum-scale = &apos; + phoneScale + &apos;, maximum-scale = &apos; + phoneScale + &apos;, target-densitydpi=device-dpi&quot;&gt;&apos;);
+    }
+  }
+  addViewPort();
+&lt;/script&gt;
 </code></pre>
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -255,84 +236,16 @@ background-color: red;
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/21/移动端缩放响应式布局/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/08/21/移动rem响应式布局/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/08/21/hexo+github搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo+github搭建博客
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/08/21/移动端缩放响应式布局/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">移动端缩放响应式布局</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -352,14 +265,152 @@ background-color: red;
 
 
 
-  
-  
-  
 
   
-
+    <article id="post-马爹利h5音频的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/18/马爹利h5音频的坑/">马爹利h5音频的坑</a>
+    </h1>
   
 
+        
+        <a href="/2017/07/18/马爹利h5音频的坑/" class="archive-article-date">
+  	<time datetime="2017-07-18T02:09:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>audio.duration</code><br>audio总长 有几率第一次加载拿不到 歌词显示不正常</p>
+<p><code>audio.currentTime</code><br>现在播放的时间</p>
+<pre><code>var audio = document.getElementById(&apos;audio&apos;);
+audio.load();
+audio.play();
+audio.pause();
+</code></pre><p>一定要用原生document.getElementById<br>如果是$(‘#audio’).play()就会报错</p>
+<p>IOS不能自动加载 自动播放的问题</p>
+<p>首先判断访问终端</p>
+<pre><code>var browser = {
+    versions: function () {
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {
+            trident: u.indexOf(&apos;Trident&apos;) &gt; -1, //IE内核
+            presto: u.indexOf(&apos;Presto&apos;) &gt; -1, //opera内核
+            webKit: u.indexOf(&apos;AppleWebKit&apos;) &gt; -1, //苹果、谷歌内核
+            gecko: u.indexOf(&apos;Gecko&apos;) &gt; -1 &amp;&amp; u.indexOf(&apos;KHTML&apos;) == -1,//火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf(&apos;Android&apos;) &gt; -1 || u.indexOf(&apos;Linux&apos;) &gt; -1, //android终端或者uc浏览器
+            iPhone: u.indexOf(&apos;iPhone&apos;) &gt; -1, //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf(&apos;iPad&apos;) &gt; -1, //是否iPad
+            webApp: u.indexOf(&apos;Safari&apos;) &gt; -1, //是否web应该程序，没有头部与底部
+            weixin: u.indexOf(&apos;MicroMessenger&apos;) &gt; -1, //是否微信 （2015-01-22新增）
+            weibo: u.indexOf(&apos;weibo&apos;) &gt; -1, //是否微博
+            qq: u.indexOf(&apos;QQ&apos;) &gt; -1, //是否QQ,
+            uc: u.indexOf(&apos;UCBrowser&apos;) &gt; -1, //是否UC,
+            P8: u.indexOf(&apos;P8&apos;) &gt; -1, //是否P8,
+            wechatdevtools: u.indexOf(&apos;wechatdevtools&apos;) &gt; -1 //是否微信调试工具,
+        };
+    }(),
+    language: (navigator.browserLanguage || navigator.language).toLowerCase()
+}
+</code></pre><p>如果是ios</p>
+<pre><code>    Util.layerLoading();
+       if (browser.versions.weixin &amp;&amp;         browser.versions.ios) {
+    WeixinJSBridgeReadyCallBack(function () {
+                Dom.audio.load();
+            });
+     } else {
+            Dom.audio.load();
+}
+
+
+function WeixinJSBridgeReadyCallBack(callBack) {
+    if (browser.versions.weixin &amp;&amp; browser.versions.ios) {
+        if (typeof WeixinJSBridge == &quot;object&quot;) {
+            WeixinJSBridge.invoke(&quot;WeixinJSBridgeReady&quot;, {}, function (e) {
+
+                callBack();
+
+            });
+        }
+        else {
+            document.addEventListener(&quot;WeixinJSBridgeReady&quot;, function (e) {
+
+                callBack();
+
+            }, false);
+        }
+    }
+    else {
+
+        callBack();
+
+    }
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/18/马爹利h5音频的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -382,8 +433,8 @@ background-color: red;
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
