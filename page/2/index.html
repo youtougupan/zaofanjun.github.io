@@ -170,6 +170,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="webpack打包忽略css, autoprefixer的坑-webpack打包忽略css, autoprefixer的坑" class="article article-type-webpack打包忽略css, autoprefixer的坑  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/18/webpack打包忽略css, autoprefixer的坑/">autoprefixer的坑</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/18/webpack打包忽略css, autoprefixer的坑/" class="archive-article-date">
+  	<time datetime="2018-04-18T01:52:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>今天用webpack打包vue项目时，发现多行省略号的代码一直没有执行，dev正常，test环境打包完就不行，还以为有缓存，结果最后在打包完的css代码里发现-webkit-box-orient: vertical;被自动忽略了<br>结果发现是 autoprefixer 的锅</p>
+</blockquote>
+<h2 id="autoprefixer"><a href="#autoprefixer" class="headerlink" title="autoprefixer"></a><a href="#autoprefixer" title="autoprefixer"></a>autoprefixer</h2><blockquote>
+<p>autoprefixer不仅会帮你加-webkit-之类的prefixer，<br>它还会帮你删除你自己写在 css/sass/less里的样式，<br>真是厉害了</p>
+<p>关闭autoprefixer的自动删除功能，这样</p>
+</blockquote>
+<pre><code>/*! autoprefixer: off */
+-webkit-box-orient: vertical;
+/*! autoprefixer: on */
+</code></pre><blockquote>
+<p>用注释包裹的中间这一句就不会被删除</p>
+</blockquote>
+<h3 id="记得一定要加-网上找的都是不加-结果打包了无效"><a href="#记得一定要加-网上找的都是不加-结果打包了无效" class="headerlink" title="记得一定要加! 网上找的都是不加! 结果打包了无效"></a><a href="#记得一定要加-网上找的都是不加-结果打包了无效" title="记得一定要加! 网上找的都是不加! 结果打包了无效"></a>记得一定要加! 网上找的都是不加! 结果打包了无效</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/18/webpack打包忽略css, autoprefixer的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vuex状态持久化，vuex-persistedstate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1296,188 +1382,6 @@ ShaderSprite
 
 
   
-    <article id="post-小程序商品修改" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/小程序商品修改/">小程序商品修改</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/16/小程序商品修改/" class="archive-article-date">
-  	<time datetime="2017-10-16T02:08:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>首页页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>首页可以展示</li>
-<li>推荐商品可以下滑一直加载更多</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>首页banner图和一些推荐广告页点击跳转页面</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>banner图的获取方式是否有问题，index控制器里面index接口的$ad新加，一次加载全部</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>分类页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以正常展示分类</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>缺少分类的图片</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>缺少分类的图片，后台数据库没有传图片</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>分类点击后商品筛选列表页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以展示商品信息</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>暂未增加筛选功能，比如品牌，价钱之类</li>
-<li>分页有问题，加载更多</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>分页有问题，good控制器里goodsList获取商品列表接口的分页不正常，我添加了两个参数代替原来$page 但是不起作用</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>购物车页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以展示，但是不能操作</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>大部分逻辑</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>缺少商品放入购物车后，立刻下单结算的接口和参数，没看明白后台的cart2 cart3 cart4几个接口的意思</li>
-<li>缺少 + - 删除 商品数量的接口，没找到后台</li>
-<li>用户登录后，购物车初始化时商品数量不正确，改过但是没改明白，比如有2个同样商品的，显示的还是1个</li>
-<li>购物车的商品信息到前台，缺少商品图片</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>商品详情页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>可以展示商品详情，新加展示评论</li>
-<li>可以收藏</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>加入购物车的商品规格未连通</li>
-<li>不能取消收藏</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>待定</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>订单页面</p>
-</blockquote>
-<ul>
-<li>已完成：<ol>
-<li>无</li>
-</ol>
-</li>
-<li>未完成：<ol>
-<li>无</li>
-</ol>
-</li>
-<li>后台待修改：<ol>
-<li>购物车下单接口先跑通，在看订单</li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/16/小程序商品修改/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1587,11 +1491,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">

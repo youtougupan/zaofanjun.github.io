@@ -170,6 +170,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js扩展运算符，神奇的3个点点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/17/js扩展运算符，神奇的3个点点/">js扩展运算符，神奇的3个点点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/17/js扩展运算符，神奇的3个点点/" class="archive-article-date">
+  	<time datetime="2019-04-17T12:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近lz一周排了9个面试，面试经常被问到一些数组的问题，比如说es6里面一些数组去重、合并数组，之前压根就没了解过，后来才知道考的都是es6的知识，今天好好挖掘一下，发现一个神奇的点点三姐妹</p>
+<p>我们来看看经常使用的方法</p>
+<h3 id="1、数组去重"><a href="#1、数组去重" class="headerlink" title="1、数组去重"></a>1、数组去重</h3><blockquote>
+<p>之前的想法可能要遍历数组去重，但是现在又es6的骚操作<br>        var a = [1,1,2,3]<br>        Array.from(new Set()) // 利用es6特性去重方法<br>        […new Set(arr)]  // 利用js扩展运算符的骚操作</p>
+</blockquote>
+<h3 id="2、将一个数组放入另一个数组（打散数组）"><a href="#2、将一个数组放入另一个数组（打散数组）" class="headerlink" title="2、将一个数组放入另一个数组（打散数组）"></a>2、将一个数组放入另一个数组（打散数组）</h3><pre><code>var a = [1,2]
+var b = [a,3,4]
+console.log(b) // [[1,2],3,4]
+
+// 如果使用扩展运算符
+var b = [...a, 3,4]
+console.log(b) // [1,2,3,4]
+</code></pre><h3 id="3、复制数组（不会改变原数组）"><a href="#3、复制数组（不会改变原数组）" class="headerlink" title="3、复制数组（不会改变原数组）"></a>3、复制数组（不会改变原数组）</h3><pre><code>var a = [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
+var b = [...a]
+console.log(b) // [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]  
+a数组中的元素扩展为单独元素被分配到b中，可以随意改变b数组，且不会对a产生影响。
+</code></pre><h3 id="4、-拼接数组-替换concat"><a href="#4、-拼接数组-替换concat" class="headerlink" title="4、 拼接数组(替换concat)"></a>4、 拼接数组(替换concat)</h3><pre><code>var a = [1,2,3]
+var a = [4,5,6]
+a  = [...a, ...b]
+console.log(a) // [1,2,3,4,5,6]
+</code></pre><h3 id="5、-Math"><a href="#5、-Math" class="headerlink" title="5、 Math"></a>5、 Math</h3><pre><code>var a = [1,2,3,4,5]
+var max = Math.max(...a)
+console.log(max) // 5
+</code></pre><h3 id="6、字符串转换为数组"><a href="#6、字符串转换为数组" class="headerlink" title="6、字符串转换为数组"></a>6、字符串转换为数组</h3><pre><code>var a = &apos;helloworld&apos;
+var b = [...a]
+console.log(b) // [&apos;h&apos;,&apos;e&apos;,&apos;l&apos;,&apos;l&apos;,&apos;o&apos;,&apos;w&apos;,&apos;o&apos;,&apos;r&apos;,&apos;l&apos;,&apos;d&apos;]
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/17/js扩展运算符，神奇的3个点点/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-setTimeout、setInterval被遗忘的第三个参数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1025,92 +1113,6 @@ function recursive(departmentMenuList) {
 
 
   
-    <article id="webpack打包忽略css, autoprefixer的坑-webpack打包忽略css, autoprefixer的坑" class="article article-type-webpack打包忽略css, autoprefixer的坑  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/18/webpack打包忽略css, autoprefixer的坑/">autoprefixer的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/18/webpack打包忽略css, autoprefixer的坑/" class="archive-article-date">
-  	<time datetime="2018-04-18T01:52:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>今天用webpack打包vue项目时，发现多行省略号的代码一直没有执行，dev正常，test环境打包完就不行，还以为有缓存，结果最后在打包完的css代码里发现-webkit-box-orient: vertical;被自动忽略了<br>结果发现是 autoprefixer 的锅</p>
-</blockquote>
-<h2 id="autoprefixer"><a href="#autoprefixer" class="headerlink" title="autoprefixer"></a><a href="#autoprefixer" title="autoprefixer"></a>autoprefixer</h2><blockquote>
-<p>autoprefixer不仅会帮你加-webkit-之类的prefixer，<br>它还会帮你删除你自己写在 css/sass/less里的样式，<br>真是厉害了</p>
-<p>关闭autoprefixer的自动删除功能，这样</p>
-</blockquote>
-<pre><code>/*! autoprefixer: off */
--webkit-box-orient: vertical;
-/*! autoprefixer: on */
-</code></pre><blockquote>
-<p>用注释包裹的中间这一句就不会被删除</p>
-</blockquote>
-<h3 id="记得一定要加-网上找的都是不加-结果打包了无效"><a href="#记得一定要加-网上找的都是不加-结果打包了无效" class="headerlink" title="记得一定要加! 网上找的都是不加! 结果打包了无效"></a><a href="#记得一定要加-网上找的都是不加-结果打包了无效" title="记得一定要加! 网上找的都是不加! 结果打包了无效"></a>记得一定要加! 网上找的都是不加! 结果打包了无效</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/18/webpack打包忽略css, autoprefixer的坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1220,11 +1222,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
