@@ -170,6 +170,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-移动rem响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/21/移动rem响应式布局/">移动rem响应式布局</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/21/移动rem响应式布局/" class="archive-article-date">
+  	<time datetime="2017-08-21T02:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">https://github.com/amfe/lib-flexible</a></p>
+<p>利用手淘的js 根据屏幕尺寸控制html标签font-size的大小</p>
+<p>默认iphone6 width为750px</p>
+<p>lib-flexible把屏幕等分为10份 html的font-size就为75px</p>
+<p>再次利用less</p>
+<p>推荐用webstorm编辑器可以自动编译less</p>
+<pre><code>@a:75rem; //设置个变量
+
+.div{
+width: 375/@a; //所有单位用px去除以75
+height: 375/@a;
+background-color: red;
+}
+</code></pre><p>编译出来就是，less文件也方便后期维护和修改数值</p>
+<pre><code>.div {
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/21/移动rem响应式布局/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-移动端缩放响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -520,11 +612,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
             
             <div class="clearfix"></div>

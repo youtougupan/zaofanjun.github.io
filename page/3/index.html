@@ -170,6 +170,176 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-cli新建项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/05/vue-cli新建项目/">vue-cli新建项目</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/05/vue-cli新建项目/" class="archive-article-date">
+  	<time datetime="2017-12-05T02:04:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>#前端体系</p>
+<ul>
+<li>框架：Vue2.0<ol>
+<li>MVVM轻量级渐进式框架</li>
+<li>自底向上增量开发的设计，只关注视图层</li>
+<li>易于上手，文档全中文</li>
+</ol>
+</li>
+<li>构建工具：Vue-cli<ol>
+<li>成熟的vue项目结构设计</li>
+<li>本地测试服务器<ol>
+<li>webpack集成打包上线方案</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>PC组件库：ElementUI<ol>
+<li>饿了么团队开发维护的pc端组件库</li>
+<li>完善的组件库 + UI设计库</li>
+<li>相比bootstrap, elementUI的24栅格布局更具灵活性</li>
+</ol>
+</li>
+<li>移动端组件库：VUX<ol>
+<li>易用，实用，美观的移动端UI组件库</li>
+</ol>
+</li>
+<li>html代码风格：h5最新标签<ol>
+<li>header footer article section aside</li>
+</ol>
+</li>
+<li>css代码风格：less预处理语言<ol>
+<li>增加了诸如变量、混合（mixin）、函数等功能</li>
+<li>可以嵌套式写法，可以更好维护css代码</li>
+</ol>
+</li>
+<li>js代码风格：es6<ol>
+<li>使用最新的es6语法开发新一代web前端应用</li>
+<li>例如let、const、箭头函数、template string</li>
+</ol>
+</li>
+<li>包管理工具：Npm<ol>
+<li>世界上最大的包管理器</li>
+</ol>
+</li>
+<li>自动流打包工具：webpack（Vue框架） / gulp（不使用框架）<ol>
+<li>webpack已集成在Vue-cli中</li>
+<li>gulp通过Npm安装使用</li>
+</ol>
+</li>
+<li>代码格式统一工具：eslint（待定，要求太过严格，经常会报错）<ol>
+<li>代码规范和错误检查工具</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p>###AngluarJS1 的劣势：</p>
+<ol>
+<li>致命劣势：官方已经不在维护该框架，未来组件将不会得到更新，时间就了就会被淘汰</li>
+<li>与最新的angular 2相比，完全不一样，与以后的版本脱离，很难升级</li>
+<li>太重</li>
+</ol>
+<p>###Vue2.0 的优势：</p>
+<ol>
+<li>简单：官方文档很清晰，比 Angular 简单易学。</li>
+<li>快速：异步批处理方式更新 DOM。组合：用解耦的、可复用的组件组合你的应用程序。</li>
+<li>紧凑：20kb min+gzip，且无依赖。</li>
+<li>强大：表达式 &amp; 无需声明依赖的可推导属性 (computed properties)。</li>
+<li>对模块友好：可以通过 NPM、Bower 或 Duo 安装，不强迫你所有的代码都遵循 Angular 的各种规定，使用场景更加灵活。</li>
+</ol>
+<hr>
+<p>#前端思想</p>
+<ol>
+<li>用框架就不用JQuery</li>
+<li>数据驱动页面</li>
+<li>组件化编程</li>
+</ol>
+<hr>
+<ol>
+<li><p>全局安装vue-cli<br><code>sudo npm install -g vue-cli</code></p>
+</li>
+<li><p>生成项目<br><code>vue init webpack gu-test</code></p>
+</li>
+<li><p>到达新建目录下<br><code>cd gu-test</code></p>
+</li>
+<li><p>安装依赖<br><code>sudo npm install</code></p>
+</li>
+<li><p>安装路由 网络请求 less<br><code>sudo npm install vue-resource less less-loader json-server --save-dev</code><br><code>npm install npm install vuex --save</code></p>
+</li>
+<li><p>开始运行<br><code>npm run dev</code></p>
+</li>
+<li><p>生成服务器build<br><code>npm run build</code></p>
+</li>
+</ol>
+<h3 id="生成项目时的一些内容"><a href="#生成项目时的一些内容" class="headerlink" title="生成项目时的一些内容"></a><a href="#生成项目时的一些内容" title="生成项目时的一些内容"></a>生成项目时的一些内容</h3><ul>
+<li>Project name gu_vue （名称）<br>Project description A Vue.js project （简介）<br>Author gupan <a href="mailto:gupan@ieou.com" target="_blank" rel="noopener">gupan@ieou.com</a> （作者）<br>Vue build standalone<br>Install vue-router? Yes （是否安装路由）<br>Use ESLint to lint your code? No （ESLint代码检查）<br>Set up unit tests No （测试）<br>Setup e2e tests with Nightwatch? No （测试）</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/05/vue-cli新建项目/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-three-js初上手" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1258,98 +1428,6 @@ hexo version #查看Hexo的版本
 
 
   
-    <article id="post-移动rem响应式布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/21/移动rem响应式布局/">移动rem响应式布局</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/21/移动rem响应式布局/" class="archive-article-date">
-  	<time datetime="2017-08-21T02:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">https://github.com/amfe/lib-flexible</a></p>
-<p>利用手淘的js 根据屏幕尺寸控制html标签font-size的大小</p>
-<p>默认iphone6 width为750px</p>
-<p>lib-flexible把屏幕等分为10份 html的font-size就为75px</p>
-<p>再次利用less</p>
-<p>推荐用webstorm编辑器可以自动编译less</p>
-<pre><code>@a:75rem; //设置个变量
-
-.div{
-width: 375/@a; //所有单位用px去除以75
-height: 375/@a;
-background-color: red;
-}
-</code></pre><p>编译出来就是，less文件也方便后期维护和修改数值</p>
-<pre><code>.div {
-    width: 5rem;
-    height: 5rem;
-    background-color: red;
-}
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/21/移动rem响应式布局/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1463,11 +1541,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
             
             <div class="clearfix"></div>
