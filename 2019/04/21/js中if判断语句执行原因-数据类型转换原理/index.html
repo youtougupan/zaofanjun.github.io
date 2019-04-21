@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>移动rem响应式布局 | 早饭君的个人博客</title>
+  <title>js中if判断语句执行原因--数据类型转换原理 | 早饭君的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
-<meta name="keywords" content="移动端">
+  <meta name="description" content="前言：相信我们程序员平时写代码用的最多的逻辑就是if语句了吧，可你知道他的原理是什么吗，其实这跟Boolean()这个方法有关，此方法为自动执行（在需要判定Boolean的语句中中自动执行），这些转换规则对理解if控制语句自动执行相应的Boolean转换非常重要，  这是我们平时所写的代码        var a = “auto”        if(a){            console">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动rem响应式布局">
-<meta property="og:url" content="http://yoursite.com/2017/08/21/移动rem响应式布局/index.html">
+<meta property="og:title" content="js中if判断语句执行原因--数据类型转换原理">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/js中if判断语句执行原因-数据类型转换原理/index.html">
 <meta property="og:site_name" content="早饭君的个人博客">
-<meta property="og:description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
+<meta property="og:description" content="前言：相信我们程序员平时写代码用的最多的逻辑就是if语句了吧，可你知道他的原理是什么吗，其实这跟Boolean()这个方法有关，此方法为自动执行（在需要判定Boolean的语句中中自动执行），这些转换规则对理解if控制语句自动执行相应的Boolean转换非常重要，  这是我们平时所写的代码        var a = “auto”        if(a){            console">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-18T02:18:50.983Z">
+<meta property="og:updated_time" content="2019-04-21T13:26:14.248Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动rem响应式布局">
-<meta name="twitter:description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
+<meta name="twitter:title" content="js中if判断语句执行原因--数据类型转换原理">
+<meta name="twitter:description" content="前言：相信我们程序员平时写代码用的最多的逻辑就是if语句了吧，可你知道他的原理是什么吗，其实这跟Boolean()这个方法有关，此方法为自动执行（在需要判定Boolean的语句中中自动执行），这些转换规则对理解if控制语句自动执行相应的Boolean转换非常重要，  这是我们平时所写的代码        var a = “auto”        if(a){            console">
   
     <link rel="alternative" href="/atom.xml" title="早饭君的个人博客" type="application/atom+xml">
   
@@ -173,46 +172,101 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-移动rem响应式布局" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js中if判断语句执行原因-数据类型转换原理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      移动rem响应式布局
+      js中if判断语句执行原因--数据类型转换原理
     </h1>
   
 
         
-        <a href="/2017/08/21/移动rem响应式布局/" class="archive-article-date">
-  	<time datetime="2017-08-21T02:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+        <a href="/2019/04/21/js中if判断语句执行原因-数据类型转换原理/" class="archive-article-date">
+  	<time datetime="2019-04-21T13:25:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">https://github.com/amfe/lib-flexible</a></p>
-<p>利用手淘的js 根据屏幕尺寸控制html标签font-size的大小</p>
-<p>默认iphone6 width为750px</p>
-<p>lib-flexible把屏幕等分为10份 html的font-size就为75px</p>
-<p>再次利用less</p>
-<p>推荐用webstorm编辑器可以自动编译less</p>
-<pre><code>@a:75rem; //设置个变量
+        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>相信我们程序员平时写代码用的最多的逻辑就是if语句了吧，可你知道他的原理是什么吗，其实这跟Boolean()这个方法有关，此方法为自动执行（在需要判定Boolean的语句中中自动执行），这些转换规则对理解if控制语句自动执行相应的Boolean转换非常重要，</p>
+<blockquote>
+<p>这是我们平时所写的代码<br>        var a = “auto”<br>        if(a){<br>            console.log(“执行”)<br>        }</p>
+</blockquote>
+<blockquote>
+<p>其实执行起来是这样，理解一下</p>
+</blockquote>
+<pre><code>var a = &quot;auto&quot;
+if(Boolean(a)){
+    console.log(&quot;执行&quot;)
+}
+</code></pre><p>这样其实就好理解了，每个类型的值其实都可以转换为Boolean值，有一定的规则，接下来我们看看具体操作</p>
+<h3 id="取证"><a href="#取证" class="headerlink" title="取证"></a>取证</h3><blockquote>
+<p>将需要转换的数据传递给Boolean()函数</p>
+</blockquote>
+<ul>
+<li><p><strong>Boolean</strong>: 毋庸置疑true就是true，false就是false，但是new Boolean这里有坑</p>
+<pre><code>    var boolean1 = true;  // true;  
+    var boolean2 = false; // false; 
+    console.log(Boolean(boolean1));
+    console.log(Boolean(boolean2));
+// 这里坑来了 Boolean()是返回布尔值，new Boolean()是返回布尔对象（对象里面的值为false，）
+    var x = Boolean(false);
+    if (x) {
+      // 这里的代码不会被执行
+    }
 
-.div{
-width: 375/@a; //所有单位用px去除以75
-height: 375/@a;
-background-color: red;
-}
-</code></pre><p>编译出来就是，less文件也方便后期维护和修改数值</p>
-<pre><code>.div {
-    width: 5rem;
-    height: 5rem;
-    background-color: red;
-}
-</code></pre>
+    var x = new Boolean(false);
+    if (x) {
+      // 这里的代码会被执行
+    }
+</code></pre></li>
+</ul>
+<blockquote>
+<p>注意不要将基本类型中的布尔值 true 和 false 与值为 true 和 false 的 Boolean 对象弄混了。不要在应该使用基本类型布尔值的地方使用 Boolean 对象。</p>
+</blockquote>
+<pre><code>var x = Boolean(expression);     // 推荐（Boolean值）
+var x = new Boolean(expression); // 不推荐，Boolean对象里的值不管是true还是false，只要对象有值都会判定为true，if语句中都会执行、
+</code></pre><hr>
+<ul>
+<li><strong>String</strong>: 只要不是空字符串(没有任何内容),任何非空字符串(包含空格) 都会转换为true  </li>
+</ul>
+<pre><code>var str1 = &quot;&quot;;  // &quot;&quot; --&gt; false
+var str2 = &quot; &quot;; // &quot; &quot; --&gt; true;
+var str3 = &quot;abc&quot;; // &quot; &quot; --&gt; true;
+console.log(Boolean(str1));
+console.log(Boolean(str2));
+console.log(Boolean(str3));
+</code></pre><hr>
+<ul>
+<li><strong>Number</strong>: 只有0和NaN会转换为false，其他都会转换为true</li>
+</ul>
+<pre><code>var num1 = 0;  //false
+var num2 = -1; //true
+var num3 = 1;  //true
+var num4 = NaN; //false
+console.log(Boolean(num1));        
+console.log(Boolean(num2)); 
+console.log(Boolean(num3));       
+</code></pre><hr>
+<ul>
+<li><strong>null、undefined</strong>： 都会转换为false</li>
+</ul>
+<pre><code>var n = null;  //false
+var u = undefined;  //false
+console.log(Boolean(n)); 
+console.log(Boolean(u));  
+</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h3><p>false / “” / NaN / 0 / null / undefined 都会转换为 false</p>
+<blockquote>
+<p>注意 Boolean() 和 new Boolean()的区别<br>前者生成布尔值，后者生成布尔对象，后者不推荐使用</p>
+</blockquote>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><blockquote>
+<p>大部分取经于js高程红宝书26页，3.4.4章节（Boolean类型的介绍）<br>new Boolean()的坑取经于<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" rel="noopener">MDN中Boolean的描述</a></p>
+</blockquote>
+
       
 
       
@@ -241,17 +295,6 @@ background-color: red;
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -302,7 +345,7 @@ background-color: red;
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/08/21/移动rem响应式布局/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/21/js中if判断语句执行原因-数据类型转换原理/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -316,18 +359,9 @@ background-color: red;
   
 <nav id="article-nav">
   
-    <a href="/2017/08/21/hexo+github搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo+github搭建博客
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/21/移动端缩放响应式布局/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">移动端缩放响应式布局</div>
+    <a href="/2019/04/18/vue生命周期简介和钩子函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue生命周期简介和钩子函数</div>
       <i class="icon-circle-right"></i>
     </a>
   

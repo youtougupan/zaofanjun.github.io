@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>移动rem响应式布局 | 早饭君的个人博客</title>
+  <title>vue生命周期简介和钩子函数 | 早饭君的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
-<meta name="keywords" content="移动端">
+  <meta name="description" content="简单的来说一下vue的生命周期函数  beforeCreate  // el 和 data 并未初始化 created // 完成了data数据的初始化，el没有 beforeMount // 完成了虚拟el和data初始化  mounted // 完成了真实el和data初始化  beforeUpdate updated beforeDestroy destroyed   对比下create和m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动rem响应式布局">
-<meta property="og:url" content="http://yoursite.com/2017/08/21/移动rem响应式布局/index.html">
+<meta property="og:title" content="vue生命周期简介和钩子函数">
+<meta property="og:url" content="http://yoursite.com/2019/04/18/vue生命周期简介和钩子函数/index.html">
 <meta property="og:site_name" content="早饭君的个人博客">
-<meta property="og:description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
+<meta property="og:description" content="简单的来说一下vue的生命周期函数  beforeCreate  // el 和 data 并未初始化 created // 完成了data数据的初始化，el没有 beforeMount // 完成了虚拟el和data初始化  mounted // 完成了真实el和data初始化  beforeUpdate updated beforeDestroy destroyed   对比下create和m">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-18T02:18:50.983Z">
+<meta property="og:image" content="http://yoursite.com/img/bVbrwQl">
+<meta property="og:updated_time" content="2019-04-18T13:17:48.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动rem响应式布局">
-<meta name="twitter:description" content="https://github.com/amfe/lib-flexible 利用手淘的js 根据屏幕尺寸控制html标签font-size的大小 默认iphone6 width为750px lib-flexible把屏幕等分为10份 html的font-size就为75px 再次利用less 推荐用webstorm编辑器可以自动编译less @a:75rem; //设置个变量  .div{ widt">
+<meta name="twitter:title" content="vue生命周期简介和钩子函数">
+<meta name="twitter:description" content="简单的来说一下vue的生命周期函数  beforeCreate  // el 和 data 并未初始化 created // 完成了data数据的初始化，el没有 beforeMount // 完成了虚拟el和data初始化  mounted // 完成了真实el和data初始化  beforeUpdate updated beforeDestroy destroyed   对比下create和m">
+<meta name="twitter:image" content="http://yoursite.com/img/bVbrwQl">
   
     <link rel="alternative" href="/atom.xml" title="早饭君的个人博客" type="application/atom+xml">
   
@@ -173,46 +174,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-移动rem响应式布局" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue生命周期简介和钩子函数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      移动rem响应式布局
+      vue生命周期简介和钩子函数
     </h1>
   
 
         
-        <a href="/2017/08/21/移动rem响应式布局/" class="archive-article-date">
-  	<time datetime="2017-08-21T02:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+        <a href="/2019/04/18/vue生命周期简介和钩子函数/" class="archive-article-date">
+  	<time datetime="2019-04-18T13:17:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">https://github.com/amfe/lib-flexible</a></p>
-<p>利用手淘的js 根据屏幕尺寸控制html标签font-size的大小</p>
-<p>默认iphone6 width为750px</p>
-<p>lib-flexible把屏幕等分为10份 html的font-size就为75px</p>
-<p>再次利用less</p>
-<p>推荐用webstorm编辑器可以自动编译less</p>
-<pre><code>@a:75rem; //设置个变量
+        <p>简单的来说一下vue的生命周期函数</p>
+<ul>
+<li>beforeCreate  // <strong>el 和 data 并未初始化</strong></li>
+<li>created // <strong>完成了data数据的初始化，el没有</strong></li>
+<li>beforeMount // <strong>完成了虚拟el和data初始化 </strong></li>
+<li>mounted // <strong>完成了真实el和data初始化 </strong></li>
+<li>beforeUpdate</li>
+<li>updated</li>
+<li>beforeDestroy</li>
+<li>destroyed</li>
+</ul>
+<p><img src="/img/bVbrwQl" alt="clipboard.png"></p>
+<h3 id="对比下create和mounted"><a href="#对比下create和mounted" class="headerlink" title="对比下create和mounted"></a>对比下create和mounted</h3><ul>
+<li>created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图。 </li>
+<li>mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。</li>
+</ul>
+<p>其实两者比较好理解，通常created使用的次数多，而mounted通常是在一些插件的使用或者组件的使用中进行操作，比如插件chart.js的使用: var ctx = document.getElementById(ID);通常会有这一步，而如果你写入组件中，你会发现在created中无法对chart进行一些初始化配置，一定要等这个html渲染完后才可以进行，那么mounted就是不二之选</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我们经常使用的地方</p>
+<blockquote>
+<p>beforecreate : 举个栗子：可以在这加个loading事件<br>created ：在这结束loading，在这发起后端请求，拿回数据，配合路由钩子做一些事情<br>mounted ： 如果需要获取dom的可以在这里操作</p>
+</blockquote>
 
-.div{
-width: 375/@a; //所有单位用px去除以75
-height: 375/@a;
-background-color: red;
-}
-</code></pre><p>编译出来就是，less文件也方便后期维护和修改数值</p>
-<pre><code>.div {
-    width: 5rem;
-    height: 5rem;
-    background-color: red;
-}
-</code></pre>
       
 
       
@@ -241,17 +244,6 @@ background-color: red;
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -302,7 +294,7 @@ background-color: red;
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/08/21/移动rem响应式布局/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/18/vue生命周期简介和钩子函数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -316,18 +308,18 @@ background-color: red;
   
 <nav id="article-nav">
   
-    <a href="/2017/08/21/hexo+github搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/21/js中if判断语句执行原因-数据类型转换原理/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          hexo+github搭建博客
+          js中if判断语句执行原因--数据类型转换原理
         
       </div>
     </a>
   
   
-    <a href="/2017/08/21/移动端缩放响应式布局/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">移动端缩放响应式布局</div>
+    <a href="/2019/04/17/js事件循环机制（同步任务和异步任务的区别）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js事件循环机制（同步任务和异步任务的区别）</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -170,6 +170,145 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Element-ui树形控件el-tree获取父级节点的id" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/16/Element-ui树形控件el-tree获取父级节点的id/">Element-ui树形控件el-tree获取父级节点的id</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/16/Element-ui树形控件el-tree获取父级节点的id/" class="archive-article-date">
+  	<time datetime="2018-11-16T08:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Element-ui官网给的方法</p>
+<pre><code>getCheckedKeys() { console.log(this.$refs.tree.getCheckedKeys()); },
+</code></pre><p>这种只有在所有子级都被选中的情况下才能获得父级的id，如果不选中所有的子级那么获取得到的id就只有子级的。但是一般提交数据时后台都需要父级id的。</p>
+<p>1.找到node_modules/element-ui/lib/element-ui.common.js文件</p>
+<p>2.按Ctrl+F搜索TreeStore.prototype.getCheckedKeys这个方法</p>
+<p>3.把if(node.checked)改为if (node.checked||node.indeterminate)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/16/Element-ui树形控件el-tree获取父级节点的id/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="vux-PopupPicker的坑" class="article article-type-vux  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/26/PopupPicker的坑/">vux PopupPicker的坑</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/26/PopupPicker的坑/" class="archive-article-date">
+  	<time datetime="2018-10-26T06:22:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vux-PopupPicker的坑"><a href="#vux-PopupPicker的坑" class="headerlink" title="vux PopupPicker的坑"></a>vux PopupPicker的坑</h3><p>这坑货，无语，看文档也是一知半解<br>name 和 value 好吧<br>getData的时候先转一下</p>
+<pre><code>&lt;popup-picker :columns=&quot;1&quot; title=&quot;商品名称&quot; :data=&quot;list&quot; v-model=&quot;value&quot; placeholder=&quot;请选择短缺商品&quot; value-text-align=&quot;left&quot; show-name&gt;&lt;/popup-picker&gt;
+</code></pre><p>-</p>
+<pre><code>for (const i in data) {
+     data[i].name = data[i].goodsName
+     data[i].value = data[i].goodsId.toString()
+  }
+</code></pre><p>千万别忘了把value转成sting类型，如果是int类型不然显示不了名字，我找了好久，才发现这个问题。</p>
+<p>微仓，短缺商品商品页面踩坑shortageReport</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/26/PopupPicker的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-小程序和vue-calc动态高度" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1101,167 +1240,6 @@ https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxec30dc48907effc2&amp
 
 
   
-    <article id="post-七牛上传图片前端显示方向错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/七牛上传图片前端显示方向错误/">七牛上传图片前端显示方向错误</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/14/七牛上传图片前端显示方向错误/" class="archive-article-date">
-  	<time datetime="2017-12-14T02:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###【图片引用方向纠正】直接在图片后面添加</p>
-<pre><code>?imageMogr/auto-orient
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/14/七牛上传图片前端显示方向错误/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git忽略规则和-gitignore规则不生效的解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/">Git忽略规则和.gitignore规则不生效的解决办法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/" class="archive-article-date">
-  	<time datetime="2017-12-13T02:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#Git忽略规则：</p>
-<p>在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如果没有这个文件，则需自己手工建立此文件）。这个文件每一行保存了一个匹配的规则例如：</p>
-<p>###此为注释 – 将被 Git 忽略</p>
-<pre><code>*.sample 　　 # 忽略所有 .sample 结尾的文件
-!lib.sample 　　 # 但 lib.sample 除外
-/TODO 　　 # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
-build/ 　　 # 忽略 build/ 目录下的所有文件
-doc/*.txt 　　# 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
-</code></pre><p>###.gitignore规则不生效的解决办法</p>
-<p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：</p>
-<pre><code>git rm -r --cached .
-git add .
-git commit -m &apos;update .gitignore&apos;
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1375,11 +1353,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
             
             <div class="clearfix"></div>

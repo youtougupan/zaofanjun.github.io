@@ -170,6 +170,167 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-七牛上传图片前端显示方向错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/14/七牛上传图片前端显示方向错误/">七牛上传图片前端显示方向错误</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/14/七牛上传图片前端显示方向错误/" class="archive-article-date">
+  	<time datetime="2017-12-14T02:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###【图片引用方向纠正】直接在图片后面添加</p>
+<pre><code>?imageMogr/auto-orient
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/14/七牛上传图片前端显示方向错误/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git忽略规则和-gitignore规则不生效的解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/">Git忽略规则和.gitignore规则不生效的解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/" class="archive-article-date">
+  	<time datetime="2017-12-13T02:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Git忽略规则：</p>
+<p>在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如果没有这个文件，则需自己手工建立此文件）。这个文件每一行保存了一个匹配的规则例如：</p>
+<p>###此为注释 – 将被 Git 忽略</p>
+<pre><code>*.sample 　　 # 忽略所有 .sample 结尾的文件
+!lib.sample 　　 # 但 lib.sample 除外
+/TODO 　　 # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+build/ 　　 # 忽略 build/ 目录下的所有文件
+doc/*.txt 　　# 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+</code></pre><p>###.gitignore规则不生效的解决办法</p>
+<p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交：</p>
+<pre><code>git rm -r --cached .
+git add .
+git commit -m &apos;update .gitignore&apos;
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/13/Git忽略规则和-gitignore规则不生效的解决办法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue-cli新建项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1232,202 +1393,6 @@ gp.task(&quot;taskName&quot;,function(){
 
 
   
-    <article id="post-微信移动端的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/微信移动端的坑/">微信移动端的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/23/微信移动端的坑/" class="archive-article-date">
-  	<time datetime="2017-08-23T02:16:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="微信禁止屏幕拖动"><a href="#微信禁止屏幕拖动" class="headerlink" title="微信禁止屏幕拖动"></a><a href="#微信禁止屏幕拖动" title="微信禁止屏幕拖动"></a>微信禁止屏幕拖动</h3><pre><code>touch.on(&apos;.page&apos;, &apos;touchstart&apos;, function (ev) {
-     ev.preventDefault();
-});
-</code></pre><blockquote>
-<p>简单粗暴，但是会有个坑，input的默认事件会无法触发，也就是说弹不出输入框了</p>
-</blockquote>
-<h3 id="禁止浏览器下拉回弹，暂时先用这个"><a href="#禁止浏览器下拉回弹，暂时先用这个" class="headerlink" title="禁止浏览器下拉回弹，暂时先用这个"></a><a href="#禁止浏览器下拉回弹，暂时先用这个" title="禁止浏览器下拉回弹，暂时先用这个"></a>禁止浏览器下拉回弹，暂时先用这个</h3><pre><code>function stopDrop() {
-    var lastY;//最后一次y坐标点
-    $(document.body).on(&apos;touchstart&apos;, function(event) {
-        lastY = event.originalEvent.changedTouches[0].clientY;//点击屏幕时记录最后一次Y度坐标。
-    });
-    $(document.body).on(&apos;touchmove&apos;, function(event) {
-        var y = event.originalEvent.changedTouches[0].clientY;
-        var st = $(this).scrollTop(); //滚动条高度
-        if (y &gt;= lastY &amp;&amp; st &lt;= 10) {//如果滚动条高度小于0，可以理解为到顶了，且是下拉情况下，阻止touchmove事件。
-            lastY = y;
-            event.preventDefault();
-        }
-        lastY = y;
-
-    });
-}
-stopDrop();
-</code></pre><blockquote>
-<p>8.30测试，发现用了这个微信长按保存图片会被干扰，故去除</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">微信</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/23/微信移动端的坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo+github搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/21/hexo+github搭建博客/">hexo+github搭建博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/21/hexo+github搭建博客/" class="archive-article-date">
-  	<time datetime="2017-08-21T02:19:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考 <a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="noopener">http://www.jianshu.com/p/465830080ea9</a></p>
-<p>每次部署的步骤，可按以下三步来进行。</p>
-<pre><code>hexo clean
-
-hexo generate
-
-hexo deploy
-部署 hexo g
-
-提交 hexo d
-</code></pre><p>一些常用命令：</p>
-<pre><code>hexo new &quot;postName&quot; #新建文章
-
-hexo new page&quot;pageName&quot; #新建页面
-
-hexo generate #生成静态页面至public目录
-
-hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）
-
-hexo deploy #将.deploy目录部署到GitHub
-
-hexo help # 查看帮助
-
-hexo version #查看Hexo的版本
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/21/hexo+github搭建博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1541,11 +1506,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
             
             <div class="clearfix"></div>
